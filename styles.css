@@ -1,11 +1,18 @@
 *{
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
+  border: 1px solid red;
 }
 
-/*body*/
 
-h1{
+main {
+  display: flex;
+}
+
+.score {
+  width: 50%;
+}
+/*h1{
   
 }
 
@@ -22,6 +29,7 @@ h1{
 }
 
 .guesser-score{
+  display: flex;
   width: 650px;
   height: 400px;
   border: 1px solid #D0D2D3; 
@@ -34,4 +42,4 @@ h1{
 
 .guesser-score-article2{
   display: block; 
-}
+}*/
