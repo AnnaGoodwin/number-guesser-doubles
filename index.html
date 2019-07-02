@@ -10,8 +10,38 @@
     <h1><span>Number</span>Guesser</h1>
     <p>Ultimate Challenger Edition</p>
   </header>
-  <main>
-  
+  <main class="guesser">
+    <section class="guesser-range">
+      <h2 class="guesser-range-header">Set Range</h2>
+      <form class="guesser-range-form">
+        <label class="guesser-range-form-label">Min Range</label>
+        <input class="guesser-range-form-input" type="text">
+        <label class="guesser-range-form-label">Max Range</label>
+        <input class="guesser-range-form-input" type="text">
+        <button class="guesser-range-form-button">UPDATE</button>
+      </form>
+    </section>
+    <section class="guesser-guess">
+      <p class="guesser-guess-range">
+        The Current Range is <b class="guesser-guess-range-bold1">1</b> to <b class="guesser-guess-range-bold2">100</b>
+      </p>
+      <h2 class="guesser-guess-header1">Challenger 1</h2>
+      <form class="guesser-guess-form">
+        <label class="guesser-guess-form-label1">Name</label>
+        <input class="guesser-guess-form-input1" type="text">
+        <label class="guesser-guess-form-label2">Guess</label>
+        <input class="guesser-guess-form-input2" type="text">
+      </form>
+      <h2 class="guesser-guess-header2">Challenger 2</h2>
+      <form class="guesser-guess-form">
+        <label class="guesser-guess-form-label1">Name</label>
+        <input class="guesser-guess-form-input1" type="text">
+        <label class="guesser-guess-form-label2">Guess</label>
+        <input class="guesser-guess-form-input2" type="text">
+      </form>
+      
+    </section>
+    <section class="guesser-score"></section>
   </main>
 </body>
 <script src="main.js"></script>
