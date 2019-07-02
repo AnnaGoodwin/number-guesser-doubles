@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Number Guesser</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1><span>Number</span>Guesser</h1>
+    <p>Ultimate Challenger Edition</p>
+  </header>
+  <main class="guesser">
+    <section class="guesser-range">
+      <h2>Set Range</h2>
+      <form class="guesser-range-form">
+        <label>Min Range</label>
+        <input class="guesser-range-form-input" type="text">
+        <label>Max Range</label>
+        <input class="guesser-range-form-input" type="text">
+        <button class="guesser-range-form-button">UPDATE</button>
+      </form>
+    </section>
+    <section class="guesser-guess">
+      <p class="guesser-guess-range">
+        The Current Range is <b class="guesser-guess-range-bold1">1</b> to <b class="guesser-guess-range-bold2">100</b>
+      </p>
+      <h2>Challenger 1</h2>
+      <form class="guesser-guess-form">
+        <label>Name</label>
+        <input class="guesser-guess-form-input1" type="text">
+        <label>Guess</label>
+        <input class="guesser-guess-form-input2" type="text">
+      </form>
+      <h2>Challenger 2</h2>
+      <form class="guesser-guess-form">
+        <label>Name</label>
+        <input class="guesser-guess-form-input1" type="text">
+        <label>Guess</label>
+        <input class="guesser-guess-form-input2" type="text">
+        <button class= "guesser-guess-form-button">SUBMIT GUESS
+        </button>
+        <button class= "guesser-guess-form-button2" disabled>RESET GAME</button>
+        <button class= "guesser-guess-form-button2" disabled>CLEAR GAME</button>
+      </form>
+    </section>
+    <section class="guesser-score">
+      <h2>Latest Score</h2>
+      <article class="guesser-score-article1">
+        <h3>Challenger 1 Name</h3>
+        <p class="guesser-score-p1">current guess</p>
+        <p class="guesser-score-p2">97</p>
+        <p class="guesser-score-p3">that's too high</p>
+      </article>
+      <article class= "guesser-score-article2">
+        <h3>Challenger 2 Name</h3>
+        <p class="guesser-score-p4">current guess</p>
+        <p class="guesser-score-p5">3</p>
+        <p class="guesser-score-p6">that's too low</p>
+      </article>
+    </section>
+  </main>
+  <article class="score">
+    <aside class="score-card">
+      <p class="score-card-p1">Challenger 1 <span class="score-card-span1"> vs </span>Challenger 2</p>
+      <h4 class="score-card-header1">CHALLENGER 2 NAME</h4>
+      <h5 class="score-card-header2">WINNER</h5>
+      <p class="score-card-p2"><span class="score-card-span2">47</span>GUESSES</p>
+      <p class="score-card-p3"><span class="score-card-span3">1.35</span></p>
+      <button class="score-card-close">x</button>
+    </aside>
+  </article>
+</body>
+<script src="main.js"></script>
+</html>

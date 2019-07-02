@@ -1,0 +1,37 @@
+*{
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/*body*/
+
+h1{
+  
+}
+
+.guesser-range {
+  width: 650px;
+  height: 125px;
+  border: 1px solid #D0D2D3; 
+}
+
+.guesser-guess{
+  width: 650px;
+  height: 350px;
+  border: 1px solid #D0D2D3; 
+}
+
+.guesser-score{
+  width: 650px;
+  height: 400px;
+  border: 1px solid #D0D2D3; 
+}
+
+.guesser-score-article1{
+  display: block;
+
+}
+
+.guesser-score-article2{
+  display: block; 
+}
