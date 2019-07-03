@@ -13,16 +13,42 @@ body {
 /*header*/
 
 header{
+  height:150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #404042
 }
 
-h1 {
-  margin-top: 0;
-  text-align: center;
-  color: #E64489;
+.title{
+  /*color: white;*/
+  display: flex;
+  flex-direction: column;
 }
 
-.header-p {
+.title-header{
+  margin-top: 0;
+  color: #E64489;
+  font-weight: 300;
+  font-size: 50px;
+}
+
+.title-line-holder{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.title-line{
+  /*color: white;*/
+  height: 1px;
+  width: 25%;
+  background-color: #ffffff;
+}
+
+.title-p {
   margin: 0;
   text-align: center;
   color: white;
@@ -36,7 +62,8 @@ main {
 
 .guesser {
   background-color: #F7F7F7;
-  flex: 1;
+  flex: 1
+  height:100vh;
 }
 
 section {
