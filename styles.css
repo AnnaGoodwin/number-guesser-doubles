@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
   /*border: 1px solid red;*/
@@ -8,6 +8,7 @@
 
 body {
   margin: auto 0;
+  /*height: 100vh;*/
 }
 
 /*header*/
@@ -32,6 +33,7 @@ h1 {
 
 main {
   display: flex;
+  height: 100vh;
 }
 
 .guesser {
@@ -66,3 +68,9 @@ section {
     display: block;
     width: 100%;
   }
+  .score,
+  .guesser {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
