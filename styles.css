@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
   /*border: 1px solid red;*/
@@ -8,6 +8,7 @@
 
 body {
   margin: auto 0;
+  /*height: 100vh;*/
 }
 
 /*header*/
@@ -32,12 +33,12 @@ h1 {
 
 main {
   display: flex;
+  height: 100vh;
 }
 
 .guesser {
   background-color: #F7F7F7;
   flex: 1;
-  height: 100vh;
 }
 
 section {
@@ -62,9 +63,14 @@ section {
 
 /*code for media queries
 */
-/*/*@media(max-width: 900px){*/
-/*  .middle-dogs {
+@media(max-width: 900px){
+  main {
     display: block;
     width: 100%;
-    background-color: */
-  /*}*/
+  }
+  .score,
+  .guesser {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
