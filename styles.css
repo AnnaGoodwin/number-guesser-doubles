@@ -37,6 +37,7 @@ main {
 .guesser {
   background-color: #F7F7F7;
   flex: 1;
+  height: 100vh;
 }
 
 section {
@@ -58,3 +59,12 @@ section {
   margin: 20px 40px;
   background-color: white;
 }
+
+/*code for media queries
+*/
+/*/*@media(max-width: 900px){*/
+/*  .middle-dogs {
+    display: block;
+    width: 100%;
+    background-color: */
+  /*}*/
