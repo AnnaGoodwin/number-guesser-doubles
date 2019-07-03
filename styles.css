@@ -1,45 +1,71 @@
 *{
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
-  border: 1px solid red;
+  /*border: 1px solid red;*/
 }
 
+/*body*/
+
+body {
+  margin: auto 0;
+}
+
+/*header*/
+
+header{
+  background-color: #404042
+}
+
+h1 {
+  text-align: center;
+  color: #E64489;
+}
+
+.header-p {
+  margin: 0;
+  text-align: center;
+  color: white;
+}
+
+/*main*/
 
 main {
   display: flex;
 }
 
+.guesser {
+  background-color: #F7F7F7;
+  flex: 1;
+}
+
+section {
+  background-color: white;
+  border: 1px solid #D0D2D3; 
+  margin: 20px;
+}
+
 .score {
-  width: 50%;
-}
-/*h1{
-  
-}
-
-.guesser-range {
-  width: 650px;
-  height: 125px;
-  border: 1px solid #D0D2D3; 
-}
-
-.guesser-guess{
-  width: 650px;
-  height: 350px;
-  border: 1px solid #D0D2D3; 
+  flex: 1;
+  background-color:#D1D2D4;
 }
 
 .guesser-score{
   display: flex;
-  width: 650px;
-  height: 400px;
+}
+
+.score-card {
+  margin: 20px 40px;
+  background-color: white;
+}
+
+/*.guesser-range {
   border: 1px solid #D0D2D3; 
 }
 
-.guesser-score-article1{
-  display: block;
-
+.guesser-guess{
+  border: 1px solid #D0D2D3; 
 }
 
-.guesser-score-article2{
-  display: block; 
+.guesser-score{
+  border: 1px solid #D0D2D3; 
 }*/
