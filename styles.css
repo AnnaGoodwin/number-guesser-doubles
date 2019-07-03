@@ -62,9 +62,8 @@ section {
 
 /*code for media queries
 */
-/*/*@media(max-width: 900px){*/
-/*  .middle-dogs {
+@media(max-width: 900px){
+  main {
     display: block;
     width: 100%;
-    background-color: */
-  /*}*/
+  }
