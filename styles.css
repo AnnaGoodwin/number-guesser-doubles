@@ -1,37 +1,60 @@
 *{
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
+  /*border: 1px solid red;*/
 }
 
 /*body*/
 
-h1{
-  
+body {
+  margin: auto 0;
 }
 
-.guesser-range {
-  width: 650px;
-  height: 125px;
-  border: 1px solid #D0D2D3; 
+/*header*/
+
+header{
+  background-color: #404042
 }
 
-.guesser-guess{
-  width: 650px;
-  height: 350px;
+h1 {
+  margin-top: 0;
+  text-align: center;
+  color: #E64489;
+}
+
+.header-p {
+  margin: 0;
+  text-align: center;
+  color: white;
+}
+
+/*main*/
+
+main {
+  display: flex;
+}
+
+.guesser {
+  background-color: #F7F7F7;
+  flex: 1;
+}
+
+section {
+  background-color: white;
   border: 1px solid #D0D2D3; 
+  margin: 20px;
+}
+
+.score {
+  flex: 1;
+  background-color:#D1D2D4;
 }
 
 .guesser-score{
-  width: 650px;
-  height: 400px;
-  border: 1px solid #D0D2D3; 
+  display: flex;
 }
 
-.guesser-score-article1{
-  display: block;
-
-}
-
-.guesser-score-article2{
-  display: block; 
+.score-card {
+  margin: 20px 40px;
+  background-color: white;
 }
