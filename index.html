@@ -4,12 +4,18 @@
     <title> Number Guesser</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,800&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
-      <h1><span>Number</span>Guesser</h1>
-      <p class="header-p">Ultimate Challenger Edition</p>
+      <div class='title'>
+        <h1 class= 'title-header'><span>NUMBER</span>GUESSER</h1>
+      <div class='title-line-holder'>
+        <div class= 'title-line'></div>
+          <p class="title-p">Ultimate Challenger Edition</p>
+        <div class= 'title-line'></div>
+      </div>
+      </div>
     </header>
     <main>
       <article class="guesser">
@@ -17,9 +23,9 @@
           <h2>Set Range</h2>
           <form class="guesser-range-form">
             <label>Min Range</label>
-            <input class="guesser-range-form-input" type="text">
+            <input class="guesser-range-form-input verify-input1" type="number">
             <label>Max Range</label>
-            <input class="guesser-range-form-input" type="text">
+            <input class="guesser-range-form-input verify-input2" type="number"/>
             <button class="guesser-range-form-button">UPDATE</button>
           </form>
         </section>
@@ -32,14 +38,14 @@
             <label>Name</label>
             <input class="guesser-guess-form-input1" type="text">
             <label>Guess</label>
-            <input class="guesser-guess-form-input2" type="text">
+            <input class="guesser-guess-form-input2 verify-input3" type="number">
           </form>
           <h2>Challenger 2</h2>
           <form class="guesser-guess-form">
             <label>Name</label>
             <input class="guesser-guess-form-input1" type="text">
             <label>Guess</label>
-            <input class="guesser-guess-form-input2" type="text">
+            <input class="guesser-guess-form-input2 verify-input4" type="number">
             <button class="guesser-guess-form-button">SUBMIT GUESS
             </button>
             <button class="guesser-guess-form-button2" disabled>RESET GAME</button>
