@@ -27,18 +27,23 @@ header{
 }
 
 .title-header{
-  margin-top: 0;
   color: #E64489;
   font-weight: 300;
-  font-size: 50px;
+  font-size: 60px;
+  margin: auto;
+  margin-top: 3%;
 }
 
+span{
+  font-weight:800;
+}
 .title-line-holder{
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 98%;
+  font-size: 18px;
 }
 
 .title-line{
