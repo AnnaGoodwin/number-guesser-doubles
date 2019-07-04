@@ -26,11 +26,10 @@ function updateRange(e) {
   e.preventDefault();
   curRange1.innerHTML = numberInput1.value;
   curRange2.innerHTML = numberInput2.value;
-  getRandomNum(numberInput1.value, numberInput2.value);
-  console.log(Math.floor(Math.random() * numberInput2.value - numberInput1.value + 1) + numberInput1.value);
+  getRandomNum(parseInt(numberInput1.value), parseInt(numberInput2.value));
 }
 
 function getRandomNum(min, max) {
-  var randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
-  return randomNum = parseInt(randomNum);
+  var randomNum = Math.floor(Math.random() * (parseInt(max) - parseInt(min) + 1)) + parseInt(min);
+  return randomNum;
 }
