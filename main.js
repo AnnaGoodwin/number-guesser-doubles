@@ -34,6 +34,12 @@ function updateRange(e) {
   e.preventDefault();
   curRange1.innerHTML = numberInput1.value;
   curRange2.innerHTML = numberInput2.value;
+  getRandomNum(parseInt(numberInput1.value), parseInt(numberInput2.value));
+}
+
+function getRandomNum(min, max) {
+  var randomNum = Math.floor(Math.random() * (parseInt(max) - parseInt(min) + 1)) + parseInt(min);
+  return randomNum;
 }
 
 function submitGuess(e) {
