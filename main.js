@@ -31,6 +31,6 @@ function updateRange(e) {
 }
 
 function getRandomNum(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-
+  var randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+  return randomNum = parseInt(randomNum);
 }
