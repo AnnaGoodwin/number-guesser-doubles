@@ -1,4 +1,3 @@
-
 var numberInput1 = document.querySelector('.verify-input1')
 var numberInput2 = document.querySelector('.verify-input2')
 var updateButton = document.querySelector('.guesser-range-form-button')
