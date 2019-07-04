@@ -1,7 +1,12 @@
 var numberInput1 = document.querySelector('.verify-input1')
 var numberInput2 = document.querySelector('.verify-input2')
+var updateButton = document.querySelector('.guesser-range-form-button')
+var curRange1 = document.querySelector('.guesser-guess-range-bold1')
+var curRange2 = document.querySelector('.guesser-guess-range-bold2')
 var numberInput3 = document.querySelector('.verify-input3')
 var numberInput4 = document.querySelector('.verify-input4')
+
+updateButton.addEventListener('click', updateRange)
 
 numberInput1.addEventListener('keyup', disableExponent);
 numberInput2.addEventListener('keyup', disableExponent);
@@ -17,3 +22,8 @@ function disableExponent(e) {
   }
 }
 
+function updateRange(e) {
+  e.preventDefault();
+  curRange1.innerHTML = numberInput1.value;
+  curRange2.innerHTML = numberInput2.value;
+}
