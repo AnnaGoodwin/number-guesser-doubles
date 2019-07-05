@@ -63,13 +63,3 @@ function clearInput(e) {
   numberInput3.value = '';
   numberInput4.value = '';
 }
-
-function resetGame(e) {
-
-  clearInput();
-  getRandomNum();
-  numberInput1.value = '';
-  numberInput2.value = '';
-  currentGuess1.innerHTML = '';
-  currentGuess2.innerHTML = '';
-}
