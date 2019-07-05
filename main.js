@@ -13,22 +13,23 @@ var currentGuess1 = document.querySelector('.guesser-score-p2')
 var currentGuess2 = document.querySelector('.guesser-score-p5')
 var submitButton = document.querySelector('.guesser-guess-form-button1') 
 var clearButton = document.querySelector('.guesser-guess-form-button3')
+var resetButton = document.querySelector('.guesser-guess-form-button2')
 var randomNum = 0;
 
 document.addEventListener("DOMContentLoaded", getRandomNum);
 console.log(randomNum);
+document.addEventListener("DOMContentLoaded", disableButton);
 clearButton.addEventListener('click', clearInput);
 updateButton.addEventListener('click', updateRange);
 submitButton.addEventListener('click', submitGuess);
-
-updateButton.addEventListener('click', updateRange)
-submitButton.addEventListener('click', submitGuess)
-clearButton.addEventListener('click', clearInput)
-
 numberInput1.addEventListener('keyup', disableExponent);
 numberInput2.addEventListener('keyup', disableExponent);
 numberInput3.addEventListener('keyup', disableExponent);
 numberInput4.addEventListener('keyup', disableExponent);
+numberInput3.addEventListener('keyup', enableButton);
+numberInput4.addEventListener('keyup', enableButton);
+challenger1.addEventListener('keyup', enableButton);
+challenger2.addEventListener('keyup', enableButton);
 
 function disableExponent(e) {
   if(e.keyCode === 69) {
@@ -59,12 +60,26 @@ function submitGuess(e) {
   currentGuess2.innerHTML = numberInput4.value;
 }
 
+function disableButton(e) {
+  e.preventDefault();
+  if (challenger1.value === '' || challenger2.value === '' || numberInput3.value === '' || numberInput4.value === '') {
+    resetButton.disabled = true;
+    clearButton.disabled = true
+  }
+}
+
+function enableButton(e) {
+  e.preventDefault();
+  if (challenger1.value !== '' || challenger2.value !== '' || numberInput3.value !== '' || numberInput4.value !== '') {
+    resetButton.disabled = false;
+    clearButton.disabled = false;
+  }
+}
+
 function clearInput(e) {
   e.preventDefault();
   challenger1.value = '';
   challenger2.value = '';
   numberInput3.value = '';
   numberInput4.value = '';
-  
-  clearButton.disabled = true
 }
