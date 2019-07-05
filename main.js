@@ -12,9 +12,14 @@ var challengerName2 = document.querySelector('.guesser-score-header2')
 var currentGuess1 = document.querySelector('.guesser-score-p2')
 var currentGuess2 = document.querySelector('.guesser-score-p5')
 var submitButton = document.querySelector('.guesser-guess-form-button1') 
+var clearButton = document.querySelector('.guesser-guess-form-button3')
+var randomNum = 0;
 
-updateButton.addEventListener('click', updateRange)
-submitButton.addEventListener('click', submitGuess)
+document.addEventListener("DOMContentLoaded", getRandomNum);
+clearButton.addEventListener('click', clearInput);
+updateButton.addEventListener('click', updateRange);
+submitButton.addEventListener('click', submitGuess);
+
 
 numberInput1.addEventListener('keyup', disableExponent);
 numberInput2.addEventListener('keyup', disableExponent);
@@ -38,7 +43,7 @@ function updateRange(e) {
 }
 
 function getRandomNum(min, max) {
-  var randomNum = Math.floor(Math.random() * (parseInt(max) - parseInt(min) + 1)) + parseInt(min);
+  randomNum = Math.floor(Math.random() * (parseInt(max) - parseInt(min) + 1)) + parseInt(min) || Math.floor(Math.random() * (parseInt(100) - parseInt(1) + 1)) + parseInt(1)
   return randomNum;
 }
 
@@ -50,13 +55,14 @@ function submitGuess(e) {
   currentGuess2.innerHTML = numberInput4.value;
 }
 
-function enableButton(e) {
+function clearInput() {
   e.preventDefault();
-  if (challenger1.value !== '' || challenger2.value !== '' || numberInput3.value !== '' || numberInput4.value !== '') {
-    document.getElementsByTagName("button").removeAttribute("disabled");
-  }
+  challenger1.value = ''
+  challenger2.value = ''
+  currentGuess1.value = ''
+  currentGuess2.value = ''
 }
 
-// function resetGame() {
-
-// }
+function resetGame() {
+  
+}
