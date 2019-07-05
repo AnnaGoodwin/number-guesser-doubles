@@ -65,8 +65,10 @@ function disableButton(e) {
   e.preventDefault();
   if (challenger1.value === '' || challenger2.value === '' || numberInput3.value === '' || numberInput4.value === '') {
     resetButton.disabled = true;
+    clearButton.disabled = true
   } else {
     resetButton.disabled = false;
+    clearButton.disabled = true
   }
 }
 
