@@ -14,16 +14,15 @@ var currentGuess2 = document.querySelector('.guesser-score-p5')
 var submitButton = document.querySelector('.guesser-guess-form-button1') 
 var clearButton = document.querySelector('.guesser-guess-form-button3')
 var randomNum = 0;
+var tooHigh = "That's Too High";
+var tooLow = "That's Too Low";
+
 
 document.addEventListener("DOMContentLoaded", getRandomNum);
 console.log(randomNum);
 clearButton.addEventListener('click', clearInput);
 updateButton.addEventListener('click', updateRange);
 submitButton.addEventListener('click', submitGuess);
-
-updateButton.addEventListener('click', updateRange)
-submitButton.addEventListener('click', submitGuess)
-clearButton.addEventListener('click', clearInput)
 
 numberInput1.addEventListener('keyup', disableExponent);
 numberInput2.addEventListener('keyup', disableExponent);
@@ -41,6 +40,8 @@ function disableExponent(e) {
 
 function updateRange(e) {
   e.preventDefault();
+  numberInput1 = document.querySelector('.verify-input1');
+  numberInput2 = document.querySelector('.verify-input2');
   curRange1.innerHTML = numberInput1.value;
   curRange2.innerHTML = numberInput2.value;
   getRandomNum(parseInt(numberInput1.value), parseInt(numberInput2.value));
@@ -53,11 +54,18 @@ function getRandomNum(min, max) {
 
 function submitGuess(e) {
   e.preventDefault();
+  guessingMessage1();
+  guessingMessage2();
+  challenger1 = document.querySelector('.guesser-guess-form-nameInput1');
+  challenger2 = document.querySelector('.guesser-guess-form-nameInput2');
+  numberInput3 = document.querySelector('.verify-input3');
+  numberInput4 = document.querySelector('.verify-input4');
+
   challengerName1.innerHTML = challenger1.value;
   challengerName2.innerHTML = challenger2.value;
   currentGuess1.innerHTML = numberInput3.value;
   currentGuess2.innerHTML = numberInput4.value;
-}
+} 
 
 function clearInput(e) {
   e.preventDefault();
@@ -66,5 +74,26 @@ function clearInput(e) {
   numberInput3.value = '';
   numberInput4.value = '';
   
-  clearButton.disabled = true
+}
+
+function guessingMessage1() {
+  if (numberInput3.value > randomNum) {
+    document.querySelector('.guesser-score-p3').innerHTML = tooHigh;
+  } else if (numberInput3.value < randomNum){
+    document.querySelector('.guesser-score-p3').innerHTML = tooLow;
+
+  } else {
+    document.querySelector('.guesser-score-p3').innerHTML = 'Boom';
+  }
+}
+
+function guessingMessage2() {
+  if (numberInput4.value > randomNum) {
+    document.querySelector('.guesser-score-p6').innerHTML = tooHigh;
+  } else if (numberInput4.value < randomNum){
+    document.querySelector('.guesser-score-p6').innerHTML = tooLow;
+
+  } else {
+    document.querySelector('.guesser-score-p6').innerHTML = 'Boom';
+  }
 }
