@@ -55,7 +55,7 @@ function submitGuess(e) {
   currentGuess2.innerHTML = numberInput4.value;
 }
 
-function clearInput() {
+function clearInput(e) {
   e.preventDefault();
   challenger1.value = ''
   challenger2.value = ''
@@ -64,5 +64,5 @@ function clearInput() {
 }
 
 function resetGame() {
-  
+  clearInput
 }
