@@ -76,7 +76,5 @@ function clearInput(e) {
   challenger2.value = '';
   numberInput3.value = '';
   numberInput4.value = '';
-  
-  clearButton.disabled = true
 }
 
