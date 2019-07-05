@@ -12,9 +12,12 @@ var challengerName2 = document.querySelector('.guesser-score-header2')
 var currentGuess1 = document.querySelector('.guesser-score-p2')
 var currentGuess2 = document.querySelector('.guesser-score-p5')
 var submitButton = document.querySelector('.guesser-guess-form-button1') 
+var clearButton = document.querySelector('.guesser-guess-form-button3')
 
 updateButton.addEventListener('click', updateRange)
 submitButton.addEventListener('click', submitGuess)
+clearButton.addEventListener('click', clearInput)
+
 
 numberInput1.addEventListener('keyup', disableExponent);
 numberInput2.addEventListener('keyup', disableExponent);
@@ -48,4 +51,12 @@ function submitGuess(e) {
   challengerName2.innerHTML = challenger2.value;
   currentGuess1.innerHTML = numberInput3.value;
   currentGuess2.innerHTML = numberInput4.value;
+}
+
+function clearInput() {
+  e.preventDefault();
+  challenger1.value = ''
+  challenger2.value = ''
+  currentGuess1.value = ''
+  currentGuess2.value = ''
 }
