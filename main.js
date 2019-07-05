@@ -18,7 +18,7 @@ var randomNum = 0;
 
 document.addEventListener("DOMContentLoaded", getRandomNum);
 console.log(randomNum);
-document.addEventListener("DOMContentLoaded", disableButton)
+document.addEventListener("DOMContentLoaded", disableButton);
 clearButton.addEventListener('click', clearInput);
 updateButton.addEventListener('click', updateRange);
 submitButton.addEventListener('click', submitGuess);
@@ -68,7 +68,7 @@ function disableButton(e) {
     clearButton.disabled = true
   } else {
     resetButton.disabled = false;
-    clearButton.disabled = true
+    clearButton.disabled = false;
   }
 }
 
