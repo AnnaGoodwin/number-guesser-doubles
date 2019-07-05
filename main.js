@@ -49,3 +49,14 @@ function submitGuess(e) {
   currentGuess1.innerHTML = numberInput3.value;
   currentGuess2.innerHTML = numberInput4.value;
 }
+
+function enableButton(e) {
+  e.preventDefault();
+  if (challenger1.value !== '' || challenger2.value !== '' || numberInput3.value !== '' || numberInput4.value !== '') {
+    document.getElementsByTagName("button").removeAttribute("disabled");
+  }
+}
+
+// function resetGame() {
+
+// }
