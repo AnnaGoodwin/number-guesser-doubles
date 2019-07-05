@@ -68,6 +68,14 @@ function disableButton(e) {
   }
 }
 
+function enableButton(e) {
+  e.preventDefault();
+  if (challenger1.value !== '' || challenger2.value !== '' || numberInput3.value !== '' || numberInput4.value !== '') {
+    resetButton.disabled = false;
+    clearButton.disabled = false;
+  }
+}
+
 function clearInput(e) {
   e.preventDefault();
   challenger1.value = '';
