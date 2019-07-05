@@ -21,6 +21,9 @@ clearButton.addEventListener('click', clearInput);
 updateButton.addEventListener('click', updateRange);
 submitButton.addEventListener('click', submitGuess);
 
+updateButton.addEventListener('click', updateRange)
+submitButton.addEventListener('click', submitGuess)
+clearButton.addEventListener('click', clearInput)
 
 numberInput1.addEventListener('keyup', disableExponent);
 numberInput2.addEventListener('keyup', disableExponent);
@@ -62,4 +65,6 @@ function clearInput(e) {
   challenger2.value = '';
   numberInput3.value = '';
   numberInput4.value = '';
+  
+  clearButton.disabled = true
 }
