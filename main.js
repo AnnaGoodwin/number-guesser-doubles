@@ -16,6 +16,7 @@ var clearButton = document.querySelector('.guesser-guess-form-button3')
 var randomNum = 0;
 
 document.addEventListener("DOMContentLoaded", getRandomNum);
+console.log(randomNum);
 clearButton.addEventListener('click', clearInput);
 updateButton.addEventListener('click', updateRange);
 submitButton.addEventListener('click', submitGuess);
@@ -57,12 +58,18 @@ function submitGuess(e) {
 
 function clearInput(e) {
   e.preventDefault();
-  challenger1.value = ''
-  challenger2.value = ''
-  currentGuess1.value = ''
-  currentGuess2.value = ''
+  challenger1.value = '';
+  challenger2.value = '';
+  numberInput3.value = '';
+  numberInput4.value = '';
 }
 
-function resetGame() {
-  clearInput
+function resetGame(e) {
+
+  clearInput();
+  getRandomNum();
+  numberInput1.value = '';
+  numberInput2.value = '';
+  currentGuess1.innerHTML = '';
+  currentGuess2.innerHTML = '';
 }
