@@ -13,10 +13,12 @@ var currentGuess1 = document.querySelector('.guesser-score-p2')
 var currentGuess2 = document.querySelector('.guesser-score-p5')
 var submitButton = document.querySelector('.guesser-guess-form-button1') 
 var clearButton = document.querySelector('.guesser-guess-form-button3')
+var resetButton = document.querySelector('.guesser-guess-form-button2')
 var randomNum = 0;
 
 document.addEventListener("DOMContentLoaded", getRandomNum);
 console.log(randomNum);
+document.addEventListener("DOMContentLoaded", disableButton)
 clearButton.addEventListener('click', clearInput);
 updateButton.addEventListener('click', updateRange);
 submitButton.addEventListener('click', submitGuess);
@@ -59,6 +61,15 @@ function submitGuess(e) {
   currentGuess2.innerHTML = numberInput4.value;
 }
 
+function disableButton(e) {
+  e.preventDefault();
+  if (challenger1.value === '' || challenger2.value === '' || numberInput3.value === '' || numberInput4.value === '') {
+    resetButton.disabled = true;
+  } else {
+    resetButton.disabled = false;
+  }
+}
+
 function clearInput(e) {
   e.preventDefault();
   challenger1.value = '';
@@ -68,3 +79,4 @@ function clearInput(e) {
   
   clearButton.disabled = true
 }
+
