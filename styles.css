@@ -64,12 +64,12 @@ span{
   border-radius: 15px;
   width: 15%;
   height: 30px;
-  background-color: #6E6E6E;
+  background-color: #D0D2D3;
   color: white;
 }
 
 .guesser-range-form-button:hover{
-  background-color: #D0D2D3;
+  background-color: #6E6E6E;
 }
 
 /*main*/
@@ -124,36 +124,36 @@ h2{
   border-radius: 15px;
   width: 25%;
   height: 30px;
-  background-color: #6E6E6E;
+  background-color: #D0D2D3;
   color: white;
   }
 
   .guesser-guess-form-button1:hover{
-    background-color: #D0D2D3
+    background-color: #6E6E6E;
   }
 
   .guesser-guess-form-button2{
   border-radius: 15px;
   width: 25%;
   height: 30px;
-  background-color: #6E6E6E;
+  background-color: #D0D2D3;
   color: white;
   }
 
   .guesser-guess-form-button2:hover{
-    background-color: #D0D2D3
+    background-color: #6E6E6E;
   }
 
   .guesser-guess-form-button3{
   border-radius: 15px;
   width: 25%;
   height: 30px;
-  background-color: #6E6E6E;
+  background-color: #D0D2D3;
   color: white;
   }
 
   .guesser-guess-form-button3:hover{
-    background-color: #D0D2D3
+    background-color: #6E6E6E;
   }
 
   .middle-buttons{
