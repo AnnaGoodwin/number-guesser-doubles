@@ -14,6 +14,8 @@ var currentGuess2 = document.querySelector('.guesser-score-p5')
 var submitButton = document.querySelector('.guesser-guess-form-button1') 
 var clearButton = document.querySelector('.guesser-guess-form-button3')
 var resetButton = document.querySelector('.guesser-guess-form-button2')
+var tooHigh = "That's Too High";
+var tooLow = "That's Too Low";
 var randomNum = 0;
 
 document.addEventListener("DOMContentLoaded", getRandomNum);
@@ -54,6 +56,8 @@ function getRandomNum(min, max) {
 
 function submitGuess(e) {
   e.preventDefault();
+  guessingMessage1();
+  guessingMessage2();
   challengerName1.innerHTML = challenger1.value;
   challengerName2.innerHTML = challenger2.value;
   currentGuess1.innerHTML = numberInput3.value;
@@ -82,4 +86,24 @@ function clearInput(e) {
   challenger2.value = '';
   numberInput3.value = '';
   numberInput4.value = '';
+}
+
+function guessingMessage1() {
+  if (numberInput3.value > randomNum) {
+    document.querySelector('.guesser-score-p3').innerHTML = tooHigh;
+  } else if (numberInput3.value < randomNum){
+    document.querySelector('.guesser-score-p3').innerHTML = tooLow;
+  } else {
+    document.querySelector('.guesser-score-p3').innerHTML = 'Boom';
+  }
+}
+
+function guessingMessage2() {
+  if (numberInput4.value > randomNum) {
+    document.querySelector('.guesser-score-p6').innerHTML = tooHigh;
+  } else if (numberInput4.value < randomNum){
+    document.querySelector('.guesser-score-p6').innerHTML = tooLow;
+  } else {
+    document.querySelector('.guesser-score-p6').innerHTML = 'Boom';
+  }
 }
