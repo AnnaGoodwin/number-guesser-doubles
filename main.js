@@ -18,21 +18,22 @@ var tooHigh = "That's Too High";
 var tooLow = "That's Too Low";
 var randomNum = 0;
 
-document.addEventListener("DOMContentLoaded", getRandomNum);
+document.addEventListener('DOMContentLoaded', getRandomNum);
 console.log(randomNum);
-document.addEventListener("DOMContentLoaded", disableButton);
 clearButton.addEventListener('click', clearInput);
 updateButton.addEventListener('click', updateRange);
 submitButton.addEventListener('click', submitGuess);
+document.addEventListener('DOMContentLoaded', disableButton);
+clearButton.addEventListener('click', disableButton);
+// resetButton.addEventListener('click', disableButton);
 numberInput1.addEventListener('keyup', disableExponent);
 numberInput2.addEventListener('keyup', disableExponent);
 numberInput3.addEventListener('keyup', disableExponent);
 numberInput4.addEventListener('keyup', disableExponent);
-numberInput3.addEventListener('keyup', enableButton);
-numberInput4.addEventListener('keyup', enableButton);
-challenger1.addEventListener('keyup', enableButton);
-challenger2.addEventListener('keyup', enableButton);
-
+challenger1.addEventListener('keydown', enableButton);
+challenger2.addEventListener('keydown', enableButton);
+numberInput3.addEventListener('keydown', enableButton);
+numberInput4.addEventListener('keydown', enableButton);
 function disableExponent(e) {
   if(e.keyCode === 69) {
     numberInput1.value = '';
@@ -64,20 +65,14 @@ function submitGuess(e) {
   currentGuess2.innerHTML = numberInput4.value;
 }
 
-function disableButton(e) {
-  e.preventDefault();
-  if (challenger1.value === '' || challenger2.value === '' || numberInput3.value === '' || numberInput4.value === '') {
+function disableButton() {
     resetButton.disabled = true;
-    clearButton.disabled = true
-  }
+    clearButton.disabled = true;
 }
 
-function enableButton(e) {
-  e.preventDefault();
-  if (challenger1.value !== '' || challenger2.value !== '' || numberInput3.value !== '' || numberInput4.value !== '') {
+function enableButton() {
     resetButton.disabled = false;
     clearButton.disabled = false;
-  }
 }
 
 function clearInput(e) {
