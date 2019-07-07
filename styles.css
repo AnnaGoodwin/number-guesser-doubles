@@ -59,6 +59,11 @@ span{
   color: white;
 }
 
+.guesser-range-form{
+  display: flex;
+  flex-direction: column;
+}
+
 .guesser-range-form-button{
   border-radius: 15px;
   width: 15%;
@@ -71,7 +76,12 @@ span{
   background-color: #DD1972;
 }
 
-
+.setRange1 {
+  flex-direction: column;
+  display: flex;}
+.setRange2 {
+  flex-direction: column;
+  display: flex;}
 
 /*main*/
 
@@ -98,8 +108,31 @@ h2{
 }
 
 .name1 {
+  flex-direction: column;
+  display: flex;
 
 }
+
+.name2 {
+  flex-direction: column;
+  display: flex;
+}
+
+container{
+  flex-direction: row;
+  display: flex;
+}
+
+.guess1{
+  flex-direction: column;
+  display: flex;
+}
+
+.guesser-guess-form{
+  display: flex;
+  flex-direction: column;
+}
+
 .score {
   flex: 1;
   background-color:#D1D2D4;
