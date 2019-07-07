@@ -20,12 +20,18 @@
     <main>
       <article class="guesser">
         <section class="guesser-range">
-          <h2>Set Range</h2>
           <form class="guesser-range-form">
+          <h2>Set Range</h2>
+          <container>
+           <div class = setRange1> 
             <label>Min Range</label>
             <input class="guesser-range-form-input verify-input1" type="number">
+           </div>
+            <div class = setRange2>
             <label>Max Range</label>
             <input class="guesser-range-form-input verify-input2" type="number"/>
+           </div>
+         </container>
             <button class="guesser-range-form-button">UPDATE</button>
           </form>
         </section>
@@ -33,19 +39,31 @@
           <p class="guesser-guess-range">
           The Current Range is <b class="guesser-guess-range-bold1">1</b> to <b class="guesser-guess-range-bold2">100</b>
         </p>
+          <form class="guesser-guess-form">
           <h2>Challenger 1</h2>
-          <form class="guesser-guess-form">
-            <label>Name</label>
-            <input class="guesser-guess-form-nameInput1" type="text">
-            <label>Guess</label>
-            <input class="guesser-guess-form-input2 verify-input3" type="number">
+          <container>
+            <div class = name1>
+              <label>Name</label>
+              <input class="guesser-guess-form-nameInput1" type="text">
+            </div>
+            <div class = guess1>
+              <label>Guess</label>
+              <input class="guesser-guess-form-input2 verify-input3" type="number">
+            </div>
+           </container> 
           </form>
-          <h2>Challenger 2</h2>
           <form class="guesser-guess-form">
+          <h2>Challenger 2</h2>
+          <container>
+            <div class = name2>
             <label>Name</label>
             <input class="guesser-guess-form-nameInput2" type="text">
+            </div>
+            <div class = guess1>
             <label>Guess</label>
             <input class="guesser-guess-form-input2 verify-input4" type="number">
+            </div>
+          </container>
             <div class= 'middle-buttons'>
               <button class="guesser-guess-form-button1">SUBMIT GUESS
               </button>
