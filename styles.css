@@ -22,7 +22,6 @@ header{
 }
 
 .title{
-  /*color: white;*/
   display: flex;
   flex-direction: column;
 }
@@ -60,17 +59,29 @@ span{
   color: white;
 }
 
+.guesser-range-form{
+  display: flex;
+  flex-direction: column;
+}
+
 .guesser-range-form-button{
   border-radius: 15px;
   width: 15%;
   height: 30px;
-  background-color: #D0D2D3;
+  background-color: #6E6E6E;
   color: white;
 }
 
 .guesser-range-form-button:hover{
-  background-color: #6E6E6E;
+  background-color: #DD1972;
 }
+
+.setRange1 {
+  flex-direction: column;
+  display: flex;}
+.setRange2 {
+  flex-direction: column;
+  display: flex;}
 
 /*main*/
 
@@ -97,71 +108,88 @@ h2{
 }
 
 .name1 {
+  flex-direction: column;
+  display: flex;
 
 }
+
+.name2 {
+  flex-direction: column;
+  display: flex;
+}
+
+container{
+  flex-direction: row;
+  display: flex;
+}
+
+.guess1{
+  flex-direction: column;
+  display: flex;
+}
+
+.guesser-guess-form{
+  display: flex;
+  flex-direction: column;
+}
+
 .score {
   flex: 1;
   background-color:#D1D2D4;
 }
 
-.guesser-score{
-  display: flex;
+.guesser-score {
+    display: flex;
 }
 
 .score-card {
-  margin: 20px 40px;
-  background-color: white;
+    margin: 20px 40px;
+    background-color: white;
 }
 
-  .score,
-  .guesser {
+.score,
+.guesser {
     padding-top: 5px;
     padding-bottom: 5px;
     width: 50%;
   }
 
-  .guesser-guess-form-button1{
-  border-radius: 15px;
-  width: 25%;
-  height: 30px;
-  background-color: #D0D2D3;
-  color: white;
+.guesser-guess-form-button1,
+.guesser-guess-form-button2,
+.guesser-guess-form-button3{
+    border-radius: 15px;
+    width: 25%;
+    height: 30px;
+    background-color: #6E6E6E;
+    color: white;
   }
 
-  .guesser-guess-form-button1:hover{
+  
+.guesser-guess-form-button1:hover,
+.guesser-guess-form-button2:hover,
+.guesser-guess-form-button3:hover{
+    background-color: #DD1972;
+  }
+
+
+  button:disabled {
+    background-color: #D0D2D3;
+  }
+
+  button:enabled {
     background-color: #6E6E6E;
   }
 
-  .guesser-guess-form-button2{
-  border-radius: 15px;
-  width: 25%;
-  height: 30px;
-  background-color: #D0D2D3;
-  color: white;
-  }
-
-  .guesser-guess-form-button2:hover{
-    background-color: #6E6E6E;
-  }
-
-  .guesser-guess-form-button3{
-  border-radius: 15px;
-  width: 25%;
-  height: 30px;
-  background-color: #D0D2D3;
-  color: white;
-  }
-
-  .guesser-guess-form-button3:hover{
-    background-color: #6E6E6E;
-  }
-
-  .middle-buttons{
-    text-align: center;
+.middle-buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    width: 100%;
   }
 /*code for media queries
 */
-@media(max-width: 900px){
+  @media(max-width: 900px){
   main {
     display: block;
     width: 100%;
