@@ -3,11 +3,15 @@
   font-family: 'Open Sans', sans-serif;
   /*border: 1px solid red;*/
 }
+
+
 /*body*/
 body {
   margin: auto 0;
   /*height: 100vh;*/
 }
+
+
 /*header*/
 header{
   height:150px;
@@ -16,10 +20,12 @@ header{
   align-items: center;
   background-color: #404042
 }
+
 .title{
   display: flex;
   flex-direction: column;
 }
+
 .title-header{
   color: #E64489;
   font-weight: 300;
@@ -27,9 +33,11 @@ header{
   margin: auto;
   margin-top: 3%;
 }
+
 span{
   font-weight:800;
 }
+
 .title-line-holder{
   display: flex;
   flex-direction: row;
@@ -38,21 +46,25 @@ span{
   width: 98%;
   font-size: 18px;
 }
+
 .title-line{
   /*color: white;*/
   height: 1px;
   width: 25%;
   background-color: #ffffff;
 }
+
 .title-p {
   margin: 0;
   text-align: center;
   color: white;
 }
+
 .guesser-range-form{
   display: flex;
   flex-direction: column;
 }
+
 .guesser-range-form-button{
   border-radius: 15px;
   width: 15%;
@@ -60,50 +72,64 @@ span{
   background-color: #6E6E6E;
   color: white;
 }
+
 .guesser-range-form-button:hover{
   background-color: #DD1972;
 }
+
 .setRange1,
 .setRange2 {
   display: flex;
   flex-direction: column;
 }
+
 .verify-input1,
 .verify-input2
-.guesser-range-form-button{
+.guesser-range-form-button {
   display: flex;
 }
+
+
+
+
 /*main*/
 main {
   display: flex;
   height: 100vh;
 }
+
 .guesser {
   background-color: #F7F7F7;
   flex: 1
   height:100vh;
 }
+
 section {
   background-color: white;
   border: 1px solid #D0D2D3; 
   margin: 20px;
 }
-h2{
+
+h2 {
   font-size: 15px;
   color: #404041;
 }
+
 .name1 {
   flex-direction: column;
   display: flex;
 }
+
 .name2 {
   flex-direction: column;
   display: flex;
 }
-container{
+
+container {
   flex-direction: row;
   display: flex;
 }
+
 .guess1{
   flex-direction: column;
   display: flex;
@@ -145,6 +171,7 @@ container{
     background-color: #DD1972;
   }
   button:disabled {
+    pointer-events: none;
     background-color: #D0D2D3;
   }
   button:enabled {
@@ -157,6 +184,8 @@ container{
     margin-bottom: 20px;
     width: 100%;
   }
+
+
 /*Article-score card*/
   .score-card{
     display: none;
