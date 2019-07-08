@@ -14,6 +14,7 @@ var currentGuess2 = document.querySelector('.guesser-score-p5')
 var submitButton = document.querySelector('.guesser-guess-form-button1') 
 var clearButton = document.querySelector('.guesser-guess-form-button3')
 var resetButton = document.querySelector('.guesser-guess-form-button2')
+var scoreCard1 = document.querySelector('.score-card')
 var tooHigh = "That's Too High";
 var tooLow = "That's Too Low";
 var randomNum = 0;
@@ -90,6 +91,7 @@ function guessingMessage1() {
     document.querySelector('.guesser-score-p3').innerHTML = tooLow;
   } else {
     document.querySelector('.guesser-score-p3').innerHTML = 'Boom';
+    scoreCard1.style.display = 'block'
   }
 }
 
@@ -100,5 +102,6 @@ function guessingMessage2() {
     document.querySelector('.guesser-score-p6').innerHTML = tooLow;
   } else {
     document.querySelector('.guesser-score-p6').innerHTML = 'Boom';
+    scoreCard1.style.display = 'block'
   }
 }

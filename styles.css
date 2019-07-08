@@ -187,6 +187,10 @@ container{
     margin-bottom: 20px;
     width: 100%;
   }
+
+  .score-card{
+    display: none;
+  }
 /*code for media queries
 */
   @media(max-width: 900px){
