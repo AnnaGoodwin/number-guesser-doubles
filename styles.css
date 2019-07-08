@@ -76,12 +76,19 @@ span{
   background-color: #DD1972;
 }
 
-.setRange1 {
-  flex-direction: column;
-  display: flex;}
+.setRange1,
 .setRange2 {
+  display: flex;
   flex-direction: column;
-  display: flex;}
+
+}
+
+.verify-input1,
+.verify-input2
+.guesser-range-form-button{
+  display: flex;
+
+}
 
 /*main*/
 
@@ -187,6 +194,7 @@ container{
     margin-bottom: 20px;
     width: 100%;
   }
+/*Article-score card*/
 
   .score-card{
     display: none;

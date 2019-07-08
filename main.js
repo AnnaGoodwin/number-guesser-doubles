@@ -1,12 +1,12 @@
-var numberInput1 = document.querySelector('.verify-input1')
-var numberInput2 = document.querySelector('.verify-input2')
+var minRangeInput = document.querySelector('.verify-input1')
+var maxRangeInput = document.querySelector('.verify-input2')
 var updateButton = document.querySelector('.guesser-range-form-button')
-var curRange1 = document.querySelector('.guesser-guess-range-bold1')
-var curRange2 = document.querySelector('.guesser-guess-range-bold2')
-var numberInput3 = document.querySelector('.verify-input3')
-var numberInput4 = document.querySelector('.verify-input4')
-var challenger1 = document.querySelector('.guesser-guess-form-nameInput1')
-var challenger2 = document.querySelector('.guesser-guess-form-nameInput2')
+var curMinRange = document.querySelector('.guesser-guess-range-bold1')
+var curMaxRange = document.querySelector('.guesser-guess-range-bold2')
+var chal1GuessInput = document.querySelector('.verify-input3')
+var chal2GuessInput = document.querySelector('.verify-input4')
+var chal1NameInput = document.querySelector('.guesser-guess-form-nameInput1')
+var chal2NameInput = document.querySelector('.guesser-guess-form-nameInput2')
 var challengerName1 = document.querySelector('.guesser-score-header1')
 var challengerName2 = document.querySelector('.guesser-score-header2')
 var currentGuess1 = document.querySelector('.guesser-score-p2')
@@ -27,28 +27,28 @@ submitButton.addEventListener('click', submitGuess);
 document.addEventListener('DOMContentLoaded', disableButton);
 clearButton.addEventListener('click', disableButton);
 // resetButton.addEventListener('click', disableButton);
-numberInput1.addEventListener('keyup', disableExponent);
-numberInput2.addEventListener('keyup', disableExponent);
-numberInput3.addEventListener('keyup', disableExponent);
-numberInput4.addEventListener('keyup', disableExponent);
-challenger1.addEventListener('keydown', enableButton);
-challenger2.addEventListener('keydown', enableButton);
-numberInput3.addEventListener('keydown', enableButton);
-numberInput4.addEventListener('keydown', enableButton);
+minRangeInput.addEventListener('keyup', disableExponent);
+maxRangeInput.addEventListener('keyup', disableExponent);
+chal1GuessInput.addEventListener('keyup', disableExponent);
+chal2GuessInput.addEventListener('keyup', disableExponent);
+chal1NameInput.addEventListener('keydown', enableButton);
+chal2NameInput.addEventListener('keydown', enableButton);
+chal1GuessInput.addEventListener('keydown', enableButton);
+chal2GuessInput.addEventListener('keydown', enableButton);
 function disableExponent(e) {
   if(e.keyCode === 69) {
-    numberInput1.value = '';
-    numberInput2.value = '';
-    numberInput3.value = '';
-    numberInput4.value = '';
+    minRangeInput.value = '';
+    maxRangeInput.value = '';
+    chal1GuessInput.value = '';
+    chal2GuessInput.value = '';
   }
 }
 
 function updateRange(e) {
   e.preventDefault();
-  curRange1.innerHTML = numberInput1.value;
-  curRange2.innerHTML = numberInput2.value;
-  getRandomNum(parseInt(numberInput1.value), parseInt(numberInput2.value));
+  curMinRange.innerHTML = minRangeInput.value;
+  curMaxRange.innerHTML = maxRangeInput.value;
+  getRandomNum(parseInt(minRangeInput.value), parseInt(maxRangeInput.value));
 }
 
 function getRandomNum(min, max) {
@@ -60,10 +60,10 @@ function submitGuess(e) {
   e.preventDefault();
   guessingMessage1();
   guessingMessage2();
-  challengerName1.innerHTML = challenger1.value;
-  challengerName2.innerHTML = challenger2.value;
-  currentGuess1.innerHTML = numberInput3.value;
-  currentGuess2.innerHTML = numberInput4.value;
+  challengerName1.innerHTML = chal1NameInput.value;
+  challengerName2.innerHTML = chal2NameInput.value;
+  currentGuess1.innerHTML = chal1GuessInput.value;
+  currentGuess2.innerHTML = chal2GuessInput.value;
 }
 
 function disableButton() {
@@ -78,16 +78,16 @@ function enableButton() {
 
 function clearInput(e) {
   e.preventDefault();
-  challenger1.value = '';
-  challenger2.value = '';
-  numberInput3.value = '';
-  numberInput4.value = '';
+  chal1NameInput.value = '';
+  chal2NameInput.value = '';
+  chal1GuessInput.value = '';
+  chal2GuessInput.value = '';
 }
 
 function guessingMessage1() {
-  if (numberInput3.value > randomNum) {
+  if (chal1GuessInput.value > randomNum) {
     document.querySelector('.guesser-score-p3').innerHTML = tooHigh;
-  } else if (numberInput3.value < randomNum){
+  } else if (chal1GuessInput.value < randomNum){
     document.querySelector('.guesser-score-p3').innerHTML = tooLow;
   } else {
     document.querySelector('.guesser-score-p3').innerHTML = 'Boom';
@@ -96,12 +96,21 @@ function guessingMessage1() {
 }
 
 function guessingMessage2() {
-  if (numberInput4.value > randomNum) {
-    document.querySelector('.guesser-score-p6').innerHTML = tooHigh;
-  } else if (numberInput4.value < randomNum){
-    document.querySelector('.guesser-score-p6').innerHTML = tooLow;
+  if (chal2GuessInput.value > randomNum) {
+    document.querySelector('.guesser-score-p3').innerHTML = tooHigh;
+  } else if (chal2GuessInput.value < randomNum){
+    document.querySelector('.guesser-score-p3').innerHTML = tooLow;
   } else {
-    document.querySelector('.guesser-score-p6').innerHTML = 'Boom';
+    document.querySelector('.guesser-score-p3').innerHTML = 'Boom';
     scoreCard1.style.display = 'block'
   }
 }
+
+// function blockNumber
+//   if(e.keyCode < curRange1.value || e.keyCode > curRange2.value ) {
+  //   // numberInput1.value = '';
+  //   // numberInput2.value = '';
+  //   // numberInput3.value = '';
+  //   // numberInput4.value = '';
+  // }
+
