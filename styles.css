@@ -192,9 +192,18 @@ container {
   }
 /*code for media queries
 */
-  @media(max-width: 900px){
+
+ @media(max-width: 900px){
   main {
     display: block;
+    /*height: 100vh;*/
+    /*width: 100%;*/
+  }
+  .score,
+  .guesser {
     width: 100%;
+    height: 100vh;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 }
