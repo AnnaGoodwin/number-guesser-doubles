@@ -1,3 +1,7 @@
+
+
+// Query Selectors
+
 var numberInput1 = document.querySelector('.verify-input1')
 var numberInput2 = document.querySelector('.verify-input2')
 var updateButton = document.querySelector('.guesser-range-form-button')
@@ -15,10 +19,14 @@ var submitButton = document.querySelector('.guesser-guess-form-button1')
 var clearButton = document.querySelector('.guesser-guess-form-button3')
 var resetButton = document.querySelector('.guesser-guess-form-button2')
 var scoreCard1 = document.querySelector('.score-card')
+
+// Global Variable
 var tooHigh = "That's Too High";
 var tooLow = "That's Too Low";
 var randomNum = 0;
 
+
+// Event Listeners
 document.addEventListener('DOMContentLoaded', getRandomNum);
 console.log(randomNum);
 clearButton.addEventListener('click', clearInput);
@@ -35,6 +43,9 @@ challenger1.addEventListener('keydown', enableButton);
 challenger2.addEventListener('keydown', enableButton);
 numberInput3.addEventListener('keydown', enableButton);
 numberInput4.addEventListener('keydown', enableButton);
+
+
+// Functions
 function disableExponent(e) {
   if(e.keyCode === 69) {
     numberInput1.value = '';
@@ -105,3 +116,4 @@ function guessingMessage2() {
     scoreCard1.style.display = 'block'
   }
 }
+
