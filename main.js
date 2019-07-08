@@ -1,7 +1,3 @@
-// Query Selectors
-
-var numberInput1 = document.querySelector('.verify-input1')
-var numberInput2 = document.querySelector('.verify-input2')
 var minRangeInput = document.querySelector('.verify-input1')
 var maxRangeInput = document.querySelector('.verify-input2')
 var updateButton = document.querySelector('.guesser-range-form-button')
@@ -19,15 +15,10 @@ var submitButton = document.querySelector('.guesser-guess-form-button1')
 var clearButton = document.querySelector('.guesser-guess-form-button3')
 var resetButton = document.querySelector('.guesser-guess-form-button2')
 var scoreCard1 = document.querySelector('.score-card')
-
-
-// Global Variables
 var tooHigh = "That's Too High";
 var tooLow = "That's Too Low";
 var randomNum = 0;
 
-
-// Event Listeners
 document.addEventListener('DOMContentLoaded', getRandomNum);
 console.log(randomNum);
 clearButton.addEventListener('click', clearInput);
@@ -44,8 +35,6 @@ chal1NameInput.addEventListener('keydown', enableButton);
 chal2NameInput.addEventListener('keydown', enableButton);
 chal1GuessInput.addEventListener('keydown', enableButton);
 chal2GuessInput.addEventListener('keydown', enableButton);
-
-// Functions
 function disableExponent(e) {
   if(e.keyCode === 69) {
     minRangeInput.value = '';
@@ -117,9 +106,3 @@ function guessingMessage2() {
     scoreCard1.style.display = 'block'
   }
 }
-
-// function errorInform() {
-//   if (chal1GuessInput.value > curMaxRange || chal1GuessInput.value < curMinRange){
-//     ('.guesser-score-article1').innerHTML = "Please enter correct value";
-//   }
-// } 
