@@ -10,7 +10,7 @@ var chal2NameInput = document.querySelector('.guesser-guess-form-nameInput2')
 var challengerName1 = document.querySelector('.guesser-score-header1')
 var challengerName2 = document.querySelector('.guesser-score-header2')
 var currentGuess1 = document.querySelector('.guesser-score-p2')
-var currentGuess2 = document.querySelector('.guesser-score-p5')
+var currentGuess2 = document.querySelector('.guesser-score-p4')
 var submitButton = document.querySelector('.guesser-guess-form-button1') 
 var clearButton = document.querySelector('.guesser-guess-form-button3')
 var resetButton = document.querySelector('.guesser-guess-form-button2')
@@ -60,6 +60,7 @@ function submitGuess(e) {
   e.preventDefault();
   guessingMessage1();
   guessingMessage2();
+  console.log(errorInform)
   challengerName1.innerHTML = chal1NameInput.value;
   challengerName2.innerHTML = chal2NameInput.value;
   currentGuess1.innerHTML = chal1GuessInput.value;
@@ -97,20 +98,19 @@ function guessingMessage1() {
 
 function guessingMessage2() {
   if (chal2GuessInput.value > randomNum) {
-    document.querySelector('.guesser-score-p3').innerHTML = tooHigh;
+    document.querySelector('.guesser-score-p5').innerHTML = tooHigh;
   } else if (chal2GuessInput.value < randomNum){
-    document.querySelector('.guesser-score-p3').innerHTML = tooLow;
+    document.querySelector('.guesser-score-p5').innerHTML = tooLow;
   } else {
-    document.querySelector('.guesser-score-p3').innerHTML = 'Boom';
+    document.querySelector('.guesser-score-p5').innerHTML = 'Boom';
     scoreCard1.style.display = 'block'
   }
 }
 
-// function blockNumber
-//   if(e.keyCode < curRange1.value || e.keyCode > curRange2.value ) {
-  //   // numberInput1.value = '';
-  //   // numberInput2.value = '';
-  //   // numberInput3.value = '';
-  //   // numberInput4.value = '';
-  // }
+// function errorInform() {
+//   if (chal1GuessInput.value > curMaxRange || chal1GuessInput.value < curMinRange){
+//     ('.guesser-score-article1').innerHTML = "Please enter correct value";
+//   }
+// } 
+
 
