@@ -102,21 +102,9 @@ label {
   font-size: 15px;
 }
 
-.name1,
-.name2,
-.guess1,
-.setRange1,
-.setRange2,
-.guesser-guess-form,
-.guesser-range-form {
-  flex-direction: column;
-  display: flex;
-}
-
 .container1 {
   justify-content: space-between;
   display: flex;
-  flex-wrap: wrap;
   align-items: flex-end;
 }
 
@@ -155,7 +143,6 @@ label {
 .guesser-range-form-button {
   font-size: 14px;
   border-radius: 15px;
-  width: 15%;
   height: 30px;
   background-color: #6E6E6E;
   color: white;
