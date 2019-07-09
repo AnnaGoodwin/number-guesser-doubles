@@ -12,8 +12,9 @@ body {
 }
 
 
-/*header*/
-header{
+/* header */
+
+header {
   height: 150px;
   display: flex;
   flex-direction: column;
@@ -48,7 +49,6 @@ span{
 }
 
 .title-line{
-  /*color: white;*/
   height: 1px;
   width: 25%;
   background-color: #ffffff;
@@ -60,9 +60,7 @@ span{
   color: white;
 }
 
-
-
-/*main*/
+/* main */
 
 main {
   display: flex;
@@ -83,7 +81,6 @@ button:enabled {
     padding-bottom: 5px;
     width: 50%;
   }
-
 
 /* guesser */
 
@@ -178,7 +175,7 @@ label {
 
 .guesser-guess-form-button1,
 .guesser-guess-form-button2,
-.guesser-guess-form-button3{
+.guesser-guess-form-button3 {
     font-size: 14px;
     border-radius: 15px;
     width: 25%;
@@ -186,7 +183,7 @@ label {
     background-color: #6E6E6E;
     color: white;
     font-weight: 700;
-  }
+}
   
 .guesser-guess-form-button1:hover,
 .guesser-guess-form-button2:hover,
@@ -200,7 +197,6 @@ label {
   flex: 1;
   background-color:#D1D2D4;
 }
-
 
 /*code for media queries
 */
