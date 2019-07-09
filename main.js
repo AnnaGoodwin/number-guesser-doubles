@@ -15,6 +15,8 @@ var submitButton = document.querySelector('.guesser-guess-form-button1')
 var clearButton = document.querySelector('.guesser-guess-form-button3')
 var resetButton = document.querySelector('.guesser-guess-form-button2')
 var scoreCard1 = document.querySelector('.score-card')
+var errorMessageNumber1 = document.querySelector('.guesser-number-error1')
+var errorMessageNumber2 = document.querySelector('.guesser-number-error2')
 var tooHigh = "That's Too High";
 var tooLow = "That's Too Low";
 var randomNum = 0;
@@ -60,6 +62,8 @@ function submitGuess(e) {
   e.preventDefault();
   guessingMessage1();
   guessingMessage2();
+  numericErrorMessage1();
+  numericErrorMessage2();
   challengerName1.innerHTML = chal1NameInput.value;
   challengerName2.innerHTML = chal2NameInput.value;
   currentGuess1.innerHTML = chal1GuessInput.value;
@@ -106,17 +110,22 @@ function guessingMessage2() {
   }
 }
 
-function numericErrorMessage1() {
-  if (chal1GuessInput.value > parseInt(curMaxRange.innerText) || chal1GuessInput.value < parseInt(curMinRange.innerText)) {
-    errorMessageNumber1.style.display = 'block'
-  }
+function numericErrorMessage(){
+  if 
 }
 
-function numericErrorMessage2() {
-  if (chal2GuessInput.value > parseInt(curMaxRange.innerText) || chal2GuessInput.value < parseInt(curMinRange.innerText)) {
-    errorMessageNumber2.style.display = 'block'
-  }
-}
+// function numericErrorMessage1() {
+//   if (chal1GuessInput.value > parseInt(maxRangeInput.innerText) || chal1GuessInput.value < parseInt(minRangeInput.innerText)) {
+//     errorMessageNumber1.style.display = 'block'
+//   }
+// }
+
+// function numericErrorMessage2() {
+//   console.log(numericErrorMessage2)
+//   if (chal2GuessInput.value > parseInt(maxRangeInput.innerText) || chal2GuessInput.value < parseInt(minRangeInput.innerText)) {
+//     errorMessageNumber2.style.display = 'block'
+//   }
+// }
 
 
 
