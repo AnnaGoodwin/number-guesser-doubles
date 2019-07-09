@@ -110,23 +110,17 @@ function guessingMessage2() {
   }
 }
 
-function numericErrorMessage(){
-  if 
+function numericErrorMessage1() {
+  if (chal1GuessInput.value > parseInt(curMaxRange.innerText) || chal1GuessInput.value < parseInt(curMinRange.innerText)) {
+    errorMessageNumber1.style.display = 'block'
+  }
 }
 
-// function numericErrorMessage1() {
-//   if (chal1GuessInput.value > parseInt(maxRangeInput.innerText) || chal1GuessInput.value < parseInt(minRangeInput.innerText)) {
-//     errorMessageNumber1.style.display = 'block'
-//   }
-// }
-
-// function numericErrorMessage2() {
-//   console.log(numericErrorMessage2)
-//   if (chal2GuessInput.value > parseInt(maxRangeInput.innerText) || chal2GuessInput.value < parseInt(minRangeInput.innerText)) {
-//     errorMessageNumber2.style.display = 'block'
-//   }
-// }
-
+function numericErrorMessage2() {
+  if (chal2GuessInput.value > parseInt(curMaxRange.innerText) || chal2GuessInput.value < parseInt(curMinRange.innerText)) {
+    errorMessageNumber2.style.display = 'block'
+  }
+}
 
 
 // The Guess fields should only accept values that fall within the defined min and max range.
