@@ -22,12 +22,12 @@ header {
   background-color: #404042
 }
 
-.title{
+.title {
   display: flex;
   flex-direction: column;
 }
 
-.title-header{
+.title-header {
   color: #E64489;
   font-weight: 300;
   font-size: 60px;
@@ -35,11 +35,11 @@ header {
   margin-top: 3%;
 }
 
-span{
+span {
   font-weight:800;
 }
 
-.title-line-holder{
+.title-line-holder {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -48,7 +48,7 @@ span{
   font-size: 18px;
 }
 
-.title-line{
+.title-line {
   height: 1px;
   width: 25%;
   background-color: #ffffff;
@@ -132,7 +132,7 @@ label {
     display: none;
 }
 
-.middle-buttons{
+.middle-buttons {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -152,7 +152,7 @@ label {
   display: flex;
 }
 
-.guesser-range-form-button{
+.guesser-range-form-button {
   font-size: 14px;
   border-radius: 15px;
   width: 15%;
@@ -162,7 +162,7 @@ label {
   font-weight: 700;
 }
 
-.guesser-range-form-button:hover{
+.guesser-range-form-button:hover {
   background-color: #DD1972;
 }
 
@@ -187,7 +187,7 @@ label {
   
 .guesser-guess-form-button1:hover,
 .guesser-guess-form-button2:hover,
-.guesser-guess-form-button3:hover{
+.guesser-guess-form-button3:hover {
     background-color: #DD1972;
   }
 
@@ -201,7 +201,7 @@ label {
 /*code for media queries
 */
 
- @media(max-width: 900px){
+ @media(max-width: 900px) {
   main {
     display: block;
   }
