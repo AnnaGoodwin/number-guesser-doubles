@@ -71,6 +71,7 @@ span{
   height: 30px;
   background-color: #6E6E6E;
   color: white;
+  font-weight: 700;
 }
 
 .guesser-range-form-button:hover{
@@ -104,6 +105,12 @@ main {
   height:100vh;
 }
 
+.guesser-range-form-input,
+.guesser-guess-form-input2 {
+  height: 31px;
+  width: 140px;
+}
+
 section {
   background-color: white;
   border: 1px solid #D0D2D3; 
@@ -111,8 +118,8 @@ section {
 }
 
 h2 {
-  font-size: 15px;
-  color: #404041;
+  font-size: 18px;
+  color: #6E6E6E;
 }
 
 .name1 {
@@ -163,6 +170,7 @@ container {
     height: 30px;
     background-color: #6E6E6E;
     color: white;
+    font-weight: 700;
   }
   
 .guesser-guess-form-button1:hover,
