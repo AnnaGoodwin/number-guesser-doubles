@@ -105,3 +105,30 @@ function guessingMessage2() {
     scoreCard1.style.display = 'block'
   }
 }
+
+function numericErrorMessage1() {
+  if (chal1GuessInput.value > parseInt(curMaxRange.innerText) || chal1GuessInput.value < parseInt(curMinRange.innerText)) {
+    errorMessageNumber1.style.display = 'block'
+  }
+}
+
+function numericErrorMessage2() {
+  if (chal2GuessInput.value > parseInt(curMaxRange.innerText) || chal2GuessInput.value < parseInt(curMinRange.innerText)) {
+    errorMessageNumber2.style.display = 'block'
+  }
+}
+
+
+
+// The Guess fields should only accept values that fall within the defined min and max range.
+// The application should display an error message if the value entered in the Max Range input is less than the value in the Min Range input
+// The application should display an error message if the value entered in the Min Range input is greater than the value in the Max Range input
+// The application should display an error message if either guess is not a number (e.g. parseInt() returns NaN).
+// The application should display an error if either guess is outside of the range of possible answers.
+// The application should display an error if the Update or Submit Guess buttons are clicked when their associated input fields do not have a value entered
+
+   //   function errorInform() {
+   //    console.log(errorInform)
+   //    if (chal1GuessInput.value > curMaxRange || chal1GuessInput.value < curMinRange){
+   //      return = 'error message'
+   // }
