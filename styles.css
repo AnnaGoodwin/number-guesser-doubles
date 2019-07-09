@@ -12,21 +12,22 @@ body {
 }
 
 
-/*header*/
-header{
-  height:150px;
+/* header */
+
+header {
+  height: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #404042
 }
 
-.title{
+.title {
   display: flex;
   flex-direction: column;
 }
 
-.title-header{
+.title-header {
   color: #E64489;
   font-weight: 300;
   font-size: 60px;
@@ -34,11 +35,11 @@ header{
   margin-top: 3%;
 }
 
-span{
+span {
   font-weight:800;
 }
 
-.title-line-holder{
+.title-line-holder {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -47,8 +48,7 @@ span{
   font-size: 18px;
 }
 
-.title-line{
-  /*color: white;*/
+.title-line {
   height: 1px;
   width: 25%;
   background-color: #ffffff;
@@ -60,49 +60,29 @@ span{
   color: white;
 }
 
-.guesser-range-form{
-  display: flex;
-  flex-direction: column;
-}
+/* main */
 
-.guesser-range-form-button{
-  border-radius: 15px;
-  width: 15%;
-  height: 30px;
-  background-color: #6E6E6E;
-  color: white;
-}
-
-.guesser-range-form-button:hover{
-  background-color: #DD1972;
-}
-
-.setRange1,
-.setRange2 {
-  display: flex;
-  flex-direction: column;
-}
-
-.verify-input1,
-.verify-input2
-.guesser-range-form-button {
-  display: flex;
-}
-
-
-
-
-/*main*/
 main {
   display: flex;
-  height: 100vh;
 }
 
+button:disabled {
+    pointer-events: none;
+    background-color: #D0D2D3;
+  }
+
+button:enabled {
+    background-color: #6E6E6E;
+  }
+
+.score,
 .guesser {
-  background-color: #F7F7F7;
-  flex: 1
-  height:100vh;
-}
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 50%;
+  }
+
+/* guesser */
 
 section {
   background-color: white;
@@ -111,98 +91,110 @@ section {
 }
 
 h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 18px;
+  color: #6E6E6E;
+}
+
+label {
+  color: #6E6E6E;
   font-size: 15px;
-  color: #404041;
 }
 
-.name1 {
-  flex-direction: column;
+.container1 {
+  justify-content: space-between;
   display: flex;
+  align-items: flex-end;
 }
 
-.name2 {
-  flex-direction: column;
-  display: flex;
+.guesser {
+  background-color: #F7F7F7;
+  flex: 1
+  /*height:100vh;*/
 }
 
-container {
-  flex-direction: row;
-  display: flex;
-}
-
-.guess1{
-  flex-direction: column;
-  display: flex;
-}
-.guesser-guess-form{
-  display: flex;
-  flex-direction: column;
-}
-.score {
-  flex: 1;
-  background-color:#D1D2D4;
-}
-.guesser-score {
-    display: flex;
-}
 .score-card {
     margin: 20px 40px;
     background-color: white;
+    display: none;
 }
-.score,
-.guesser {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    width: 50%;
+
+.middle-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
   }
+
+.guesser-range,
+.guesser-guess,
+.guesser-score {
+  padding: 15px;
+}
+
+.verify-input1,
+.verify-input2,
+.guesser-score,
+.guesser-range-form-button {
+  display: flex;
+}
+
+.guesser-range-form-button {
+  font-size: 14px;
+  border-radius: 15px;
+  height: 30px;
+  background-color: #6E6E6E;
+  color: white;
+  font-weight: 700;
+}
+
+.guesser-range-form-button:hover {
+  background-color: #DD1972;
+}
+
+.guesser-range-form-input,
+.guesser-guess-form-input2 {
+  margin-right: 10px;
+  height: 31px;
+  width: 140px;
+}
+
 .guesser-guess-form-button1,
 .guesser-guess-form-button2,
-.guesser-guess-form-button3{
+.guesser-guess-form-button3 {
+    font-size: 14px;
     border-radius: 15px;
     width: 25%;
     height: 30px;
     background-color: #6E6E6E;
     color: white;
-  }
+    font-weight: 700;
+}
   
 .guesser-guess-form-button1:hover,
 .guesser-guess-form-button2:hover,
-.guesser-guess-form-button3:hover{
+.guesser-guess-form-button3:hover {
     background-color: #DD1972;
   }
-  button:disabled {
-    pointer-events: none;
-    background-color: #D0D2D3;
-  }
-  button:enabled {
-    background-color: #6E6E6E;
-  }
-.middle-buttons{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 20px;
-    width: 100%;
-  }
 
+/* score */
 
-/*Article-score card*/
-  .score-card{
-    display: none;
-  }
+.score {
+  flex: 1;
+  background-color:#D1D2D4;
+}
+
 /*code for media queries
 */
 
- @media(max-width: 900px){
+ @media(max-width: 900px) {
   main {
     display: block;
-    /*height: 100vh;*/
-    /*width: 100%;*/
   }
   .score,
   .guesser {
     width: 100%;
-    height: 100vh;
     padding-top: 5px;
     padding-bottom: 5px;
   }

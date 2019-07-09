@@ -4,67 +4,67 @@
     <title> Number Guesser</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700,800&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
-      <div class='title'>
-        <h1 class= 'title-header'><span>NUMBER</span>GUESSER</h1>
-      <div class='title-line-holder'>
-        <div class= 'title-line'></div>
+      <div class="title">
+        <h1 class="title-header"><span>NUMBER</span>GUESSER</h1>
+      <div class="title-line-holder">
+        <div class="title-line"></div>
           <p class="title-p">Ultimate Challenger Edition</p>
-        <div class= 'title-line'></div>
+        <div class="title-line"></div>
       </div>
       </div>
     </header>
     <main>
-      <article class="guesser">
+      <aside class="guesser">
         <section class="guesser-range">
           <form class="guesser-range-form">
             <h2>Set Range</h2>
-            <container>
-              <div class = setRange1> 
+            <div class="container1">
+              <div class="setRange1"> 
                 <label>Min Range</label>
                 <input class="guesser-range-form-input verify-input1" type="number">
               </div>
-              <div class = setRange2>
+              <div class="setRange2">
                 <label>Max Range</label>
                 <input class="guesser-range-form-input verify-input2" type="number"/>
               </div>
               <button class="guesser-range-form-button">UPDATE</button>
-            </container>
+            </div>
           </form>
         </section>
         <section class="guesser-guess">
           <p class="guesser-guess-range">
           The Current Range is <b class="guesser-guess-range-bold1">1</b> to <b class="guesser-guess-range-bold2">100</b>
-        </p>
+          </p>
           <form class="guesser-guess-form">
           <h2>Challenger 1</h2>
-          <container>
-            <div class = name1>
+          <div class="container2">
+            <div class="name1">
               <label>Name</label>
               <input class="guesser-guess-form-nameInput1" type="text">
             </div>
-            <div class = guess1>
+            <div class="guess1">
               <label>Guess</label>
               <input class="guesser-guess-form-input2 verify-input3" type="number">
             </div>
-           </container> 
+           </div> 
           </form>
           <form class="guesser-guess-form">
           <h2>Challenger 2</h2>
-          <container>
-            <div class = name2>
+          <div class="container3">
+            <div class="name2">
             <label>Name</label>
             <input class="guesser-guess-form-nameInput2" type="text">
             </div>
-            <div class = guess1>
+            <div class="guess1">
             <label>Guess</label>
             <input class="guesser-guess-form-input2 verify-input4" type="number">
             </div>
-          </container>
-            <div class= 'middle-buttons'>
+          </div>
+            <div class="middle-buttons">
               <button class="guesser-guess-form-button1">SUBMIT GUESS
               </button>
               <button class="guesser-guess-form-button2">RESET GAME</button>
@@ -75,37 +75,37 @@
         <section class="guesser-score">
           <h2>Latest Score</h2>
           <article class="guesser-score-article1">
-            <h3 class= guesser-score-header1>Challenger 1 Name</h3>
+            <h3 class="guesser-score-header1">Challenger 1 Name</h3>
             <p class="guesser-score-p1">current guess</p>
             <p class="guesser-score-p2">--</p>
             <p class="guesser-score-p3">that's too high</p>
           </article>
-          <article class= "guesser-score-article2">
+          <article class="guesser-score-article2">
             <h3 class= "guesser-score-header2">Challenger 2 Name</h3>
             <p class="guesser-score-p1">current guess</p>
             <p class="guesser-score-p4">--</p>
             <p class="guesser-score-p5">that's too low</p>
           </article>
         </section>
-      </article>
-      <article class="score">
-        <aside class="score-card">
+      </aside>
+      <aside class="score">
+        <article class="score-card">
           <p class="score-card-p1">Challenger 1 <span class="score-card-span1"> vs </span>Challenger 2</p>
           <h4 class="score-card-header1">CHALLENGER 2 NAME</h4>
           <h5 class="score-card-header2">WINNER</h5>
           <p class="score-card-p2"><span class="score-card-span2">47</span>GUESSES</p>
           <p class="score-card-p3"><span class="score-card-span3">1.35</span></p>
           <button class="score-card-close">x</button>
-        </aside>
-        <aside class="score-card">
+        </article>
+        <article class="score-card">
           <p class="score-card-p1">Challenger 1 <span class="score-card-span1"> vs </span>Challenger 2</p>
           <h4 class="score-card-header1">CHALLENGER 2 NAME</h4>
           <h5 class="score-card-header2">WINNER</h5>
           <p class="score-card-p2"><span class="score-card-span2">47</span>GUESSES</p>
           <p class="score-card-p3"><span class="score-card-span3">1.35</span></p>
           <button class="score-card-close">x</button>
-        </aside>
-      </article>
+        </article>
+      </aside>
     </main>
     <script src="main.js"></script>
   </body>
