@@ -4,15 +4,15 @@
   /*border: 1px solid red;*/
 }
 
-/*body*/
 
+/*body*/
 body {
   margin: auto 0;
   /*height: 100vh;*/
 }
 
-/*header*/
 
+/*header*/
 header{
   height:150px;
   display: flex;
@@ -37,6 +37,7 @@ header{
 span{
   font-weight:800;
 }
+
 .title-line-holder{
   display: flex;
   flex-direction: row;
@@ -80,18 +81,18 @@ span{
 .setRange2 {
   display: flex;
   flex-direction: column;
-
 }
 
 .verify-input1,
 .verify-input2
-.guesser-range-form-button{
+.guesser-range-form-button {
   display: flex;
-
 }
 
-/*main*/
 
+
+
+/*main*/
 main {
   display: flex;
   height: 100vh;
@@ -109,7 +110,7 @@ section {
   margin: 20px;
 }
 
-h2{
+h2 {
   font-size: 15px;
   color: #404041;
 }
@@ -117,7 +118,6 @@ h2{
 .name1 {
   flex-direction: column;
   display: flex;
-
 }
 
 .name2 {
@@ -125,7 +125,7 @@ h2{
   display: flex;
 }
 
-container{
+container {
   flex-direction: row;
   display: flex;
 }
@@ -134,33 +134,27 @@ container{
   flex-direction: column;
   display: flex;
 }
-
 .guesser-guess-form{
   display: flex;
   flex-direction: column;
 }
-
 .score {
   flex: 1;
   background-color:#D1D2D4;
 }
-
 .guesser-score {
     display: flex;
 }
-
 .score-card {
     margin: 20px 40px;
     background-color: white;
 }
-
 .score,
 .guesser {
     padding-top: 5px;
     padding-bottom: 5px;
     width: 50%;
   }
-
 .guesser-guess-form-button1,
 .guesser-guess-form-button2,
 .guesser-guess-form-button3{
@@ -170,23 +164,19 @@ container{
     background-color: #6E6E6E;
     color: white;
   }
-
   
 .guesser-guess-form-button1:hover,
 .guesser-guess-form-button2:hover,
 .guesser-guess-form-button3:hover{
     background-color: #DD1972;
   }
-
-
   button:disabled {
+    pointer-events: none;
     background-color: #D0D2D3;
   }
-
   button:enabled {
     background-color: #6E6E6E;
   }
-
 .middle-buttons{
     display: flex;
     flex-wrap: wrap;
@@ -194,16 +184,26 @@ container{
     margin-bottom: 20px;
     width: 100%;
   }
-/*Article-score card*/
 
+
+/*Article-score card*/
   .score-card{
     display: none;
   }
 /*code for media queries
 */
-  @media(max-width: 900px){
+
+ @media(max-width: 900px){
   main {
     display: block;
+    /*height: 100vh;*/
+    /*width: 100%;*/
+  }
+  .score,
+  .guesser {
     width: 100%;
+    height: 100vh;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 }

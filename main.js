@@ -60,7 +60,6 @@ function submitGuess(e) {
   e.preventDefault();
   guessingMessage1();
   guessingMessage2();
-  console.log(errorInform)
   challengerName1.innerHTML = chal1NameInput.value;
   challengerName2.innerHTML = chal2NameInput.value;
   currentGuess1.innerHTML = chal1GuessInput.value;
@@ -106,11 +105,3 @@ function guessingMessage2() {
     scoreCard1.style.display = 'block'
   }
 }
-
-// function errorInform() {
-//   if (chal1GuessInput.value > curMaxRange || chal1GuessInput.value < curMinRange){
-//     ('.guesser-score-article1').innerHTML = "Please enter correct value";
-//   }
-// } 
-
-
