@@ -115,7 +115,6 @@ main {
 
 .guesser-range-form-input,
 .guesser-guess-form-input2 {
-  margin-bottom: 10px;
   margin-right: 10px;
   height: 31px;
   width: 140px;
@@ -144,9 +143,11 @@ h2 {
   display: flex;
 }
 
-container {
-  flex-direction: row;
+.container1 {
+  justify-content: space-between;
   display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
 }
 
 .guess1{
