@@ -60,12 +60,20 @@ span{
   color: white;
 }
 
+.guesser-range,
+.guesser-guess,
+.guesser-score {
+  padding: 15px;
+
+}
+
 .guesser-range-form{
   display: flex;
   flex-direction: column;
 }
 
 .guesser-range-form-button{
+  font-size: 14px;
   border-radius: 15px;
   width: 15%;
   height: 30px;
@@ -107,6 +115,8 @@ main {
 
 .guesser-range-form-input,
 .guesser-guess-form-input2 {
+  margin-bottom: 10px;
+  margin-right: 10px;
   height: 31px;
   width: 140px;
 }
@@ -118,6 +128,8 @@ section {
 }
 
 h2 {
+  margin-top: 0;
+  margin-bottom: 0;
   font-size: 18px;
   color: #6E6E6E;
 }
@@ -165,6 +177,7 @@ container {
 .guesser-guess-form-button1,
 .guesser-guess-form-button2,
 .guesser-guess-form-button3{
+    font-size: 14px;
     border-radius: 15px;
     width: 25%;
     height: 30px;
@@ -189,7 +202,6 @@ container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-bottom: 20px;
     width: 100%;
   }
 
