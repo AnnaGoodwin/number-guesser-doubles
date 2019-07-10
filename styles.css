@@ -96,7 +96,7 @@ form {
 
 h2 {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 5px;
   font-size: 18px;
   color: #6E6E6E;
 }
@@ -104,6 +104,10 @@ h2 {
 label {
   color: #6E6E6E;
   font-size: 15px;
+}
+
+input {
+  margin-top: 2px;
 }
 
 .guesser {
@@ -142,6 +146,10 @@ label {
 
 .guess {
   width: 35%;
+}
+
+.guesser-guess-range {
+  margin-top: 0;
 }
 
 .guesser-guess-form-nameInput1,
