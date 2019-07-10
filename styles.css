@@ -90,6 +90,10 @@ section {
   margin: 20px;
 }
 
+form {
+
+}
+
 h2 {
   margin-top: 0;
   margin-bottom: 0;
@@ -106,6 +110,10 @@ label {
   justify-content: space-between;
   display: flex;
   align-items: flex-end;
+}
+
+.container2 {
+  
 }
 
 .guesser {
