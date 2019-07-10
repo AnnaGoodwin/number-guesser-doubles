@@ -29,14 +29,14 @@ header {
 
 .title-header {
   color: #E64489;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 60px;
   margin: auto;
   margin-top: 3%;
 }
 
 span {
-  font-weight:800;
+  font-weight:700;
 }
 
 .title-line-holder {
@@ -96,9 +96,9 @@ form {
 
 h2 {
   margin-top: 0;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
   font-size: 18px;
-  color: #6E6E6E;
+  color: #404042;
 }
 
 label {
@@ -126,6 +126,10 @@ input {
   align-items: flex-end;
 }
 
+.container2 {
+  margin-bottom: 25px;
+}
+
 .container2,
 .container3 {
   display: flex;
@@ -150,6 +154,7 @@ input {
 
 .guesser-guess-range {
   margin-top: 0;
+  color: #404042;
 }
 
 .guesser-guess-form-nameInput1,
@@ -197,7 +202,7 @@ text-decoration: underline;
   height: 30px;
   background-color: #6E6E6E;
   color: white;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .guesser-range-form-button:hover {
