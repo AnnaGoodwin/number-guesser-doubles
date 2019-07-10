@@ -121,6 +121,9 @@ label {
 .container2,
 .container3 {
   display: flex;
+  justify-content: space-between;
+  align-content: flex-start;
+
 }
 
 .name,
@@ -128,6 +131,22 @@ label {
   display: flex;
   flex-direction: column;
 }
+
+.name {
+  width: 62%;
+}
+
+.guess {
+  width: 35%;
+}
+
+.guesser-guess-form-nameInput1,
+.guesser-guess-form-nameInput2 {
+  height: 31px;
+  width: 100%;
+  /*margin-right: 30px;*/
+}
+
 
 .score-card {
     margin: 20px 40px;
@@ -172,7 +191,7 @@ label {
 .guesser-guess-form-input2 {
   margin-right: 10px;
   height: 31px;
-  width: 140px;
+  width: 100%;
 }
 
 .guesser-guess-form-button1,
