@@ -202,6 +202,16 @@ label {
   background-color:#D1D2D4;
 }
 
+.range-number-error{
+  display: none;
+  width:15px;
+}
+
+.range-number-error2{
+  display: none;
+  width: 15px;
+}
+
 /*code for media queries
 */
 
