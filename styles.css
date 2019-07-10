@@ -113,7 +113,7 @@ label {
 }
 
 .container2 {
-  
+
 }
 
 .guesser {
@@ -185,18 +185,22 @@ label {
 .guesser-guess-form-button3:hover {
     background-color: #DD1972;
 }
+
 .guesser-number-error1 {
   display: none;
   width:15px;
 }
+
 .guesser-name-error1 {
   display: none;
   width:15px;
 }
+
 .guesser-name-error2 {
   display:none;
   width: 15px;
 }
+
 .guesser-number-error2 {
   display: none;
   width:15px;
