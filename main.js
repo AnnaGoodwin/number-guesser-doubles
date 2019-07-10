@@ -17,6 +17,10 @@ var resetButton = document.querySelector('.guesser-guess-form-button2')
 var scoreCard1 = document.querySelector('.score-card')
 var errorMessageNumber1 = document.querySelector('.guesser-number-error1')
 var errorMessageNumber2 = document.querySelector('.guesser-number-error2')
+var errorMessageName1 = document.querySelector ('.guesser-name-error1')
+var errorMessageName2 = document.querySelector ('.guesser-name-error2')
+var rangeErrorMessage1 = document.querySelector ('.range-number-error')
+var rangeErrorMessage2 = document.querySelector ('.range-number-error2')
 var tooHigh = "That's Too High";
 var tooLow = "That's Too Low";
 var randomNum = 0;
@@ -47,7 +51,10 @@ function disableExponent(e) {
 }
 
 function updateRange(e) {
+  console.log('line 52 works here')
   e.preventDefault();
+  rangeError();
+  rangeError2();
   curMinRange.innerHTML = minRangeInput.value;
   curMaxRange.innerHTML = maxRangeInput.value;
   getRandomNum(parseInt(minRangeInput.value), parseInt(maxRangeInput.value));
@@ -64,6 +71,8 @@ function submitGuess(e) {
   guessingMessage2();
   numericErrorMessage1();
   numericErrorMessage2();
+  nameErrorMessage1();
+  nameErrorMessage2();
   challengerName1.innerHTML = chal1NameInput.value;
   challengerName2.innerHTML = chal2NameInput.value;
   currentGuess1.innerHTML = chal1GuessInput.value;
@@ -110,6 +119,7 @@ function guessingMessage2() {
   }
 }
 
+
 function numericErrorMessage1() {
   if (chal1GuessInput.value > parseInt(curMaxRange.innerText) || chal1GuessInput.value < parseInt(curMinRange.innerText)) {
     errorMessageNumber1.style.display = 'block'
@@ -123,15 +133,45 @@ function numericErrorMessage2() {
 }
 
 
-// The Guess fields should only accept values that fall within the defined min and max range.
-// The application should display an error message if the value entered in the Max Range input is less than the value in the Min Range input
-// The application should display an error message if the value entered in the Min Range input is greater than the value in the Max Range input
-// The application should display an error message if either guess is not a number (e.g. parseInt() returns NaN).
-// The application should display an error if either guess is outside of the range of possible answers.
-// The application should display an error if the Update or Submit Guess buttons are clicked when their associated input fields do not have a value entered
+function nameErrorMessage1() {
+  console.log('working!!! line131')
+  if (chal1NameInput.value == '' ) {
+    console.log('working line 133')
+    errorMessageName1.style.display = 'block'
+  }
+}
 
-   //   function errorInform() {
-   //    console.log(errorInform)
-   //    if (chal1GuessInput.value > curMaxRange || chal1GuessInput.value < curMinRange){
-   //      return = 'error message'
-   // }
+function nameErrorMessage2() {
+  console.log('working!!! line40')
+  if (chal2NameInput.value == '' ) {
+    console.log('working line 142')
+    errorMessageName2.style.display = 'block'
+  }
+}
+
+
+function rangeError() {
+  console.log('working!!! line131')
+  if (minRangeInput.value == '' ) {
+    console.log('working line 133')
+    rangeErrorMessage1.style.display = 'block'
+  }
+}
+
+function rangeError2() {
+  console.log('working!!! line131')
+  if (maxRangeInput.value == '' ) {
+    console.log('working line 133')
+    rangeErrorMessage2.style.display = 'block'
+  }
+}
+
+
+
+
+
+
+
+// The application should display an error message if either guess is not a number (e.g. parseInt() returns NaN).
+
+// The application should display an error if the Update or Submit Guess buttons are clicked when their associated input fields do not have a value entered
