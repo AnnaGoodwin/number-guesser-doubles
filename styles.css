@@ -154,7 +154,7 @@ input {
 
 .guesser-guess-range {
   margin-top: 0;
-  color: #404042;
+  color: #6E6E6E;
 }
 
 .guesser-guess-form-nameInput1,
@@ -166,7 +166,8 @@ input {
 
 .guesser-guess-range-bold1,
 .guesser-guess-range-bold2 {
-text-decoration: underline;
+  text-decoration: underline;
+  color: #404042;
 }
 
 .score-card {
