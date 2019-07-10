@@ -21,6 +21,7 @@ var errorMessageName1 = document.querySelector ('.guesser-name-error1')
 var errorMessageName2 = document.querySelector ('.guesser-name-error2')
 var rangeErrorMessage1 = document.querySelector ('.range-number-error')
 var rangeErrorMessage2 = document.querySelector ('.range-number-error2')
+var scoreDisplay = document.querySelector ('.score')
 var tooHigh = "That's Too High";
 var tooLow = "That's Too Low";
 var randomNum = 0;
@@ -55,6 +56,8 @@ function updateRange(e) {
   e.preventDefault();
   rangeError();
   rangeError2();
+  rangeMinOverMaxError();
+  rangeMaxUnderMinError();
   curMinRange.innerHTML = minRangeInput.value;
   curMaxRange.innerHTML = maxRangeInput.value;
   getRandomNum(parseInt(minRangeInput.value), parseInt(maxRangeInput.value));
@@ -73,6 +76,7 @@ function submitGuess(e) {
   numericErrorMessage2();
   nameErrorMessage1();
   nameErrorMessage2();
+  cardWinner();
   challengerName1.innerHTML = chal1NameInput.value;
   challengerName2.innerHTML = chal2NameInput.value;
   currentGuess1.innerHTML = chal1GuessInput.value;
@@ -104,7 +108,6 @@ function guessingMessage1() {
     document.querySelector('.guesser-score-p3').innerHTML = tooLow;
   } else {
     document.querySelector('.guesser-score-p3').innerHTML = 'Boom';
-    scoreCard1.style.display = 'block'
   }
 }
 
@@ -115,7 +118,6 @@ function guessingMessage2() {
     document.querySelector('.guesser-score-p5').innerHTML = tooLow;
   } else {
     document.querySelector('.guesser-score-p5').innerHTML = 'Boom';
-    scoreCard1.style.display = 'block'
   }
 }
 
@@ -132,38 +134,52 @@ function numericErrorMessage2() {
   }
 }
 
-
 function nameErrorMessage1() {
-  console.log('working!!! line131')
   if (chal1NameInput.value == '' ) {
-    console.log('working line 133')
     errorMessageName1.style.display = 'block'
   }
 }
 
 function nameErrorMessage2() {
-  console.log('working!!! line40')
   if (chal2NameInput.value == '' ) {
-    console.log('working line 142')
     errorMessageName2.style.display = 'block'
   }
 }
 
 
 function rangeError() {
-  console.log('working!!! line131')
   if (minRangeInput.value == '' ) {
-    console.log('working line 133')
     rangeErrorMessage1.style.display = 'block'
   }
 }
 
 function rangeError2() {
-  console.log('working!!! line131')
   if (maxRangeInput.value == '' ) {
-    console.log('working line 133')
     rangeErrorMessage2.style.display = 'block'
   }
+}
+
+function rangeMaxUnderMinError(){
+  if (maxRangeInput.value < minRangeInput.value) {
+    rangeErrorMessage2.style.display = 'block'
+  }
+}
+
+function rangeMinOverMaxError(){
+  if (maxRangeInput.value < minRangeInput.value) {
+    rangeErrorMessage1.style.display = 'block'
+  }
+}
+
+
+function cardWinner(){
+  scoreDisplay.insertAdjacentHTML('afterbegin', `<p class="score-card-p1">Challenger 1 <span class="score-card-span1"> vs </span>Challenger 2</p>
+          <h4 class="score-card-header1">CHALLENGER 2 NAME</h4>
+          <h5 class="score-card-header2">WINNER</h5>
+          <p class="score-card-p2"><span class="score-card-span2">47</span>GUESSES</p>
+          <p class="score-card-p3"><span class="score-card-span3">1.35</span></p>
+          <button class="score-card-close">x</button>`
+)
 }
 
 
@@ -172,6 +188,4 @@ function rangeError2() {
 
 
 
-// The application should display an error message if either guess is not a number (e.g. parseInt() returns NaN).
 
-// The application should display an error if the Update or Submit Guess buttons are clicked when their associated input fields do not have a value entered
