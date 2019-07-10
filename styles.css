@@ -112,6 +112,10 @@ label {
   /*height:100vh;*/
 }
 
+.set-range {
+  width: 35%;
+}
+
 .container1 {
   justify-content: space-between;
   display: flex;
@@ -175,6 +179,7 @@ label {
 }
 
 .guesser-range-form-button {
+  padding: 0 6%;
   font-size: 14px;
   border-radius: 15px;
   height: 30px;
