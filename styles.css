@@ -159,6 +159,10 @@ input {
   /*margin-right: 30px;*/
 }
 
+.guesser-guess-range-bold1,
+.guesser-guess-range-bold2 {
+text-decoration: underline;
+}
 
 .score-card {
     margin: 20px 40px;
