@@ -4,7 +4,7 @@
     <title> Number Guesser</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -20,56 +20,51 @@
     <main>
       <aside class="guesser">
         <section class="guesser-range">
-          <form class="guesser-range-form">
-            <h2>Set Range</h2>
-            <div class="container1">
-              <div class="setRange1"> 
+          <h2>Set Range</h2>
+            <form class="container1">
+              <div class="set-range"> 
                 <label>Min Range</label>
                 <input class="guesser-range-form-input verify-input1" type="number">
                 <img class= "range-number-error" src="images/error-icon.svg">
               </div>
-              <div class="setRange2">
+              <div class="set-range">
                 <label>Max Range</label>
                 <input class="guesser-range-form-input verify-input2" type="number"/>
                 <img class= "range-number-error2" src="images/error-icon.svg">
               </div>
               <button class="guesser-range-form-button">UPDATE</button>
-            </div>
-          </form>
+            </form>
         </section>
         <section class="guesser-guess">
           <p class="guesser-guess-range">
           The Current Range is <b class="guesser-guess-range-bold1">1</b> to <b class="guesser-guess-range-bold2">100</b>
           </p>
-          <form class="guesser-guess-form">
           <h2>Challenger 1</h2>
-          <div class="container2">
-            <div class="name1">
+          <form class="container2">
+            <div class="name">
               <label>Name</label>
               <input class="guesser-guess-form-nameInput1" type="text">
               <img class= "guesser-name-error1" src="images/error-icon.svg">
             </div>
-            <div class="guess1">
+            <div class="guess">
               <label>Guess</label>
               <input class="guesser-guess-form-input2 verify-input3" type="number">
               <img class= "guesser-number-error1" src="images/error-icon.svg">
             </div>
-           </div> 
           </form>
-          <form class="guesser-guess-form">
           <h2>Challenger 2</h2>
-          <div class="container3">
-            <div class="name2">
+          <form class="container3">
+            <div class="name">
             <label>Name</label>
             <input class="guesser-guess-form-nameInput2" type="text">
             <img class= "guesser-name-error2" src="images/error-icon.svg">
             </div>
-            <div class="guess1">
+            <div class="guess">
             <label>Guess</label>
             <input class="guesser-guess-form-input2 verify-input4" type="number">
             <img class= "guesser-number-error2" src="images/error-icon.svg">
             </div>
-          </div>
+          </form>
             <div class="middle-buttons">
               <button class="guesser-guess-form-button1">SUBMIT GUESS
               </button>
