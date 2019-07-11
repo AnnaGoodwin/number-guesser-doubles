@@ -190,11 +190,14 @@ input {
   padding: 15px;
 }
 
-.verify-input1,
-.verify-input2,
-.guesser-score,
-.guesser-range-form-button {
+.guesser-score-container {
   display: flex;
+  justify-content: space-evenly;
+}
+
+.guesser-score-article1,
+.guesser-score-article2 {
+  text-align: center;
 }
 
 .guesser-range-form-button {
@@ -237,6 +240,12 @@ input {
 .guesser-guess-form-button3:hover {
     background-color: #DD1972;
 }
+
+
+/*.guesser-score-container {
+  display: flex;
+  justify-content: space-around;
+}*/
 
 .guesser-number-error1 {
   display: none;
