@@ -25,8 +25,8 @@ var scoreDisplay = document.querySelector ('.score')
 var tooHigh = "that's too high";
 var tooLow = "that's too low";
 var randomNum = 0;
-var playerCardGuess1 = 0;
-var playerCardGuess2 = 0;
+var guessCount = 0;
+
 
 document.addEventListener('DOMContentLoaded', getRandomNum);
 console.log(randomNum);
@@ -80,12 +80,13 @@ function resetGame(e) {
   getRandomNum(parseInt(minRangeInput.value), parseInt(maxRangeInput.value));
   chal1GuessInput.value = '';
   chal2GuessInput.value = '';
-  document.querySelector('.score-card-span2').innerHTML = 0;
+  // scoreDisplay.removeChild(scoreCard1);
 
 
 }
 
 function submitGuess(e) {
+  console.log('submit')
   e.preventDefault();
   guessingMessage1();
   guessingMessage2();
@@ -93,6 +94,7 @@ function submitGuess(e) {
   numericErrorMessage2();
   nameErrorMessage1();
   nameErrorMessage2();
+  guessCount += 2;
   cardWinner();
   cardWinner2();
   challengerName1.innerHTML = chal1NameInput.value;
@@ -111,14 +113,10 @@ function enableButton() {
     clearButton.disabled = false;
 }
 
-function clearInput(e) {
-  e.preventDefault();
-  chal1NameInput.value = '';
-  chal2NameInput.value = '';
-  chal1GuessInput.value = '';
-  chal2GuessInput.value = '';
-  minRangeInput.value = '';
-  maxRangeInput.value = '';
+function clearInput() {
+  
+  document.location.reload();
+ 
 }
 
 function guessingMessage1() {
@@ -211,27 +209,47 @@ function stopRangeInput () {
 }
 
 function cardWinner() {
-  if(document.querySelector('.guesser-score-p3').innerHTML === 'Boom') {
-  scoreDisplay.insertAdjacentHTML('afterbegin', `<p class="score-card-p1"> ${chal1NameInput.value.toUpperCase()}<span class="score-card-span1"> vs </span>${chal2NameInput.value.toUpperCase()}</p>
-          <h4 class="score-card-header1">${chal1NameInput.value.toUpperCase()}</h4>
+  var userGuess1 = parseInt(chal1GuessInput.value)
+  var userGuess2 = parseInt(chal2GuessInput.value)
+
+if(userGuess1 === randomNum || userGuess2 === randomNum) {
+
+  // if(document.querySelector('.guesser-score-p3').innerHTML === 'Boom') {
+// 
+  // scoreDisplay.insertAdjacentHTML('afterbegin', `<p class="score-card-p1"> ${chal1NameInput.value.toUpperCase()}<span class="score-card-span1"> vs </span>${chal2NameInput.value.toUpperCase()}</p>
+  //         <h4 class="score-card-header1">${chal1NameInput.value.toUpperCase()}</h4>
+  //         <h5 class="score-card-header2">WINNER</h5>
+  //         <p class="score-card-p2"><span class="score-card-span2">${guessCount}</span>GUESSES</p>
+  //         <p class="score-card-p3"><span class="score-card-span3"></span></p>
+  //         <button class="score-card-close">x</button>`)
+  //   guessCount = 0;
+    scoreDisplay.insertAdjacentHTML('afterbegin', `<article class="score-card"><p class="score-card-p1"> ${chal1NameInput.value.toUpperCase()}<span class="score-card-span1"> vs </span>${chal2NameInput.value.toUpperCase()}</p>
+          <h4 class="score-card-header1">${chal2NameInput.value.toUpperCase()}</h4>
           <h5 class="score-card-header2">WINNER</h5>
-          <p class="score-card-p2"><span class="score-card-span2">${playerCardGuess2++}</span>GUESSES</p>
+          <p class="score-card-p2"><span class="score-card-span2">${guessCount}</span>GUESSES</p>
           <p class="score-card-p3"><span class="score-card-span3"></span></p>
-          <button class="score-card-close">x</button>`)
+          <button class="score-card-close">x</button></article>`)
+    guessCount = 0;
+    curMinRange -= 10;
+    curMaxRange += 10;
+    resetGame
   }
 }
 
 
 function cardWinner2() {
-  playerCardGuess1 = playerCardGuess1 + 2
-  if(document.querySelector('.guesser-score-p5').innerHTML === 'Boom') {
-  scoreDisplay.insertAdjacentHTML('afterbegin', `<p class="score-card-p1"> ${chal1NameInput.value.toUpperCase()}<span class="score-card-span1"> vs </span>${chal2NameInput.value.toUpperCase()}</p>
-          <h4 class="score-card-header1">${chal2NameInput.value.toUpperCase()}</h4>
-          <h5 class="score-card-header2">WINNER</h5>
-          <p class="score-card-p2"><span class="score-card-span2">${playerCardGuess1}</span>GUESSES</p>
-          <p class="score-card-p3"><span class="score-card-span3"></span></p>
-          <button class="score-card-close">x</button>`)
-  }
+  // if(document.querySelector('.guesser-score-p5').innerHTML === 'Boom') {
+  //     console.log('hi2')
+
+  // scoreCard1.insertAdjacentHTML('afterbegin', `<p class="score-card-p1"> ${chal1NameInput.value.toUpperCase()}<span class="score-card-span1"> vs </span>${chal2NameInput.value.toUpperCase()}</p>
+  //         <h4 class="score-card-header1">${chal2NameInput.value.toUpperCase()}</h4>
+  //         <h5 class="score-card-header2">WINNER</h5>
+  //         <p class="score-card-p2"><span class="score-card-span2">${guessCount}</span>GUESSES</p>
+  //         <p class="score-card-p3"><span class="score-card-span3"></span></p>
+  //         <button class="score-card-close">x</button>`)
+  //   guessCount = 0;
+
+  // }
 }
 
 
