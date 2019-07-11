@@ -124,6 +124,7 @@ input:focus {outline:0;}
 
 .guesser {
   background-color: #F7F7F7;
+  border-right: 1px solid #6e6e6e;
   flex: 1
 }
 
