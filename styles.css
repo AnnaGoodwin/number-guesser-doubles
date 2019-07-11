@@ -76,6 +76,8 @@ button:enabled {
     background-color: #6E6E6E;
   }
 
+button:focus {outline:0;}
+
 .score,
 .guesser {
     padding-top: 5px;
@@ -110,6 +112,8 @@ label {
 input {
   margin-top: 2px;
 }
+
+input:focus {outline:0;}
 
 .guesser {
   background-color: #F7F7F7;

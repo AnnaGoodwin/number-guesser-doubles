@@ -22,9 +22,11 @@ var errorMessageName2 = document.querySelector ('.guesser-name-error2')
 var rangeErrorMessage1 = document.querySelector ('.range-number-error')
 var rangeErrorMessage2 = document.querySelector ('.range-number-error2')
 var scoreDisplay = document.querySelector ('.score')
-var tooHigh = "That's Too High";
-var tooLow = "That's Too Low";
+var tooHigh = "that's too high";
+var tooLow = "that's too low";
 var randomNum = 0;
+var playerCardGuess1 = 0;
+var playerCardGuess2 = 0;
 
 document.addEventListener('DOMContentLoaded', getRandomNum);
 console.log(randomNum);
@@ -33,7 +35,8 @@ updateButton.addEventListener('click', updateRange);
 submitButton.addEventListener('click', submitGuess);
 document.addEventListener('DOMContentLoaded', disableButton);
 clearButton.addEventListener('click', disableButton);
-// resetButton.addEventListener('click', disableButton);
+resetButton.addEventListener('click', disableButton);
+resetButton.addEventListener('click', resetGame)
 minRangeInput.addEventListener('keyup', disableExponent);
 maxRangeInput.addEventListener('keyup', disableExponent);
 chal1GuessInput.addEventListener('keyup', disableExponent);
@@ -42,6 +45,8 @@ chal1NameInput.addEventListener('keydown', enableButton);
 chal2NameInput.addEventListener('keydown', enableButton);
 chal1GuessInput.addEventListener('keydown', enableButton);
 chal2GuessInput.addEventListener('keydown', enableButton);
+minRangeInput.addEventListener('keydown', enableButton);
+maxRangeInput.addEventListener('keydown', enableButton);
 
 function disableExponent(e) {
   if(e.keyCode === 69) {
@@ -68,6 +73,13 @@ function updateRange(e) {
 function getRandomNum(min, max) {
   randomNum = Math.floor(Math.random() * (parseInt(max) - parseInt(min) + 1)) + parseInt(min) || Math.floor(Math.random() * (parseInt(100) - parseInt(1) + 1)) + parseInt(1)
   return randomNum;
+}
+
+function resetGame(e) {
+  e.preventDefault();
+  getRandomNum(parseInt(minRangeInput.value), parseInt(maxRangeInput.value));
+  chal1GuessInput.value = '';
+  chal2GuessInput.value = '';
 }
 
 function submitGuess(e) {
@@ -102,6 +114,8 @@ function clearInput(e) {
   chal2NameInput.value = '';
   chal1GuessInput.value = '';
   chal2GuessInput.value = '';
+  minRangeInput.value = '';
+  maxRangeInput.value = '';
 }
 
 function guessingMessage1() {
@@ -127,46 +141,46 @@ function guessingMessage2() {
 
 function numericErrorMessage1() {
   if (chal1GuessInput.value > parseInt(curMaxRange.innerText) || chal1GuessInput.value < parseInt(curMinRange.innerText)) {
-    errorMessageNumber1.style.display = 'block'
+    errorMessageNumber1.style.display = 'block';
   } else {
-    errorMessageNumber1.style.display = 'none'
+    errorMessageNumber1.style.display = 'none';
   }
 }
 
 function numericErrorMessage2() {
   if (chal2GuessInput.value > parseInt(curMaxRange.innerText) || chal2GuessInput.value < parseInt(curMinRange.innerText)) {
-    errorMessageNumber2.style.display = 'block'
+    errorMessageNumber2.style.display = 'block';
   } else {
-    errorMessageNumber2.style.display = 'none'
+    errorMessageNumber2.style.display = 'none';
   }
 }
 
 function nameErrorMessage1() {
   if (chal1NameInput.value == '' ) {
-    errorMessageName1.style.display = 'block'
+    errorMessageName1.style.display = 'block';
   } else {
-    errorMessageName1.style.display = 'none'
+    errorMessageName1.style.display = 'none';
   }
 }
 
 function nameErrorMessage2() {
   if (chal2NameInput.value == '' ) {
-    errorMessageName2.style.display = 'block'
+    errorMessageName2.style.display = 'block';
   } else {
-    errorMessageName2.style.display = 'none'
+    errorMessageName2.style.display = 'none';
   }
 }
 
 
 function rangeError() {
   if (minRangeInput.value == '' ) {
-    rangeErrorMessage1.style.display = 'block'
+    rangeErrorMessage1.style.display = 'block';
   }
 }
 
 function rangeError2() {
   if (maxRangeInput.value == '' ) {
-    rangeErrorMessage2.style.display = 'block'
+    rangeErrorMessage2.style.display = 'block';
   }
 }
 
@@ -193,32 +207,31 @@ function stopRangeInput () {
   }
 }
 
-function cardWinner(){
-  if(document.querySelector('.guesser-score-p3').innerHTML === 'Boom'){
+function cardWinner() {
+  if(document.querySelector('.guesser-score-p3').innerHTML === 'Boom') {
   scoreDisplay.insertAdjacentHTML('afterbegin', `<p class="score-card-p1"> ${chal1NameInput.value.toUpperCase()}<span class="score-card-span1"> vs </span>${chal2NameInput.value.toUpperCase()}</p>
           <h4 class="score-card-header1">${chal1NameInput.value.toUpperCase()}</h4>
           <h5 class="score-card-header2">WINNER</h5>
-          <p class="score-card-p2"><span class="score-card-span2">47</span>GUESSES</p>
-          <p class="score-card-p3"><span class="score-card-span3">1.35</span></p>
+          <p class="score-card-p2"><span class="score-card-span2">${playerCardGuess2++}</span>GUESSES</p>
+          <p class="score-card-p3"><span class="score-card-span3"></span></p>
           <button class="score-card-close">x</button>`)
-        }
+  }
 }
 
 
-function cardWinner2(){
-  if(document.querySelector('.guesser-score-p5').innerHTML === 'Boom'){
+function cardWinner2() {
+  if(document.querySelector('.guesser-score-p5').innerHTML === 'Boom') {
   scoreDisplay.insertAdjacentHTML('afterbegin', `<p class="score-card-p1"> ${chal1NameInput.value.toUpperCase()}<span class="score-card-span1"> vs </span>${chal2NameInput.value.toUpperCase()}</p>
           <h4 class="score-card-header1">${chal2NameInput.value.toUpperCase()}</h4>
           <h5 class="score-card-header2">WINNER</h5>
-          <p class="score-card-p2"><span class="score-card-span2">47</span>GUESSES</p>
-          <p class="score-card-p3"><span class="score-card-span3">1.35</span></p>
+          <p class="score-card-p2"><span class="score-card-span2">${playerCardGuess1++}</span>GUESSES</p>
+          <p class="score-card-p3"><span class="score-card-span3"></span></p>
           <button class="score-card-close">x</button>`)
-        }
+  }
 }
 
-// function increaseRandom () {
-//   if(document.querySelector('.guesser-score-p5').innerHTML === 'Boom')
 
-// }
+
+
 
 
