@@ -25,8 +25,8 @@ var scoreDisplay = document.querySelector ('.score')
 var tooHigh = "that's too high";
 var tooLow = "that's too low";
 var randomNum = 0;
-var playerCardGuess1 = 1;
-var playerCardGuess2 = 1;
+var playerCardGuess1 = 0;
+var playerCardGuess2 = 0;
 
 document.addEventListener('DOMContentLoaded', getRandomNum);
 console.log(randomNum);
