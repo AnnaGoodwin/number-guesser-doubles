@@ -15,11 +15,11 @@ body {
 /* header */
 
 header {
-  height: 150px;
+  align-items: center;
+  background-color: #404042;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: #404042
+  height: 150px;
 }
 
 .title {
@@ -29,10 +29,10 @@ header {
 
 .title-header {
   color: #E64489;
-  font-weight: 400;
   font-size: 60px;
-  margin: auto;
+  font-weight: 400;
   margin-top: 3%;
+  margin: auto;
 }
 
 span {
@@ -40,25 +40,25 @@ span {
 }
 
 .title-line-holder {
+  align-items: center;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  font-size: 18px;
   justify-content: space-between;
   width: 98%;
-  font-size: 18px;
 }
 
 .title-line {
+  background-color: #ffffff;
   height: 1px;
   width: 25%;
-  background-color: #ffffff;
 }
 
 .title-p {
+  color: white;
   font-size: medium;
   margin: 0;
   text-align: center;
-  color: white;
 }
 
 /* main */
@@ -135,11 +135,11 @@ input:focus {outline:0;}
 
 .guesser-score-p2,
 .guesser-score-p4 {
-  font-size: 60px;
   color: #DD1972;
+  font-size: 60px;
+  font-weight: 800;
   margin: 0;
   padding: 0;
-  font-weight: 800;
 }
 
 .guesser-score-p3,
@@ -153,9 +153,9 @@ input:focus {outline:0;}
 }
 
 .container1 {
-  justify-content: space-between;
-  display: flex;
   align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
 }
 
 .container2 {
@@ -164,9 +164,9 @@ input:focus {outline:0;}
 
 .container2,
 .container3 {
+  align-content: flex-start;
   display: flex;
   justify-content: space-between;
-  align-content: flex-start;
 
 }
 
@@ -232,13 +232,13 @@ input:focus {outline:0;}
 }
 
 .guesser-range-form-button {
-  width: 20%;
-  font-size: 14px;
-  border-radius: 15px;
-  height: 30px;
   background-color: #6E6E6E;
+  border-radius: 15px;
   color: white;
+  font-size: 14px;
   font-weight: 800;
+  height: 30px;
+  width: 20%;
 }
 
 .guesser-range-form-button:hover {
@@ -255,15 +255,15 @@ input:focus {outline:0;}
 .guesser-guess-form-button1,
 .guesser-guess-form-button2,
 .guesser-guess-form-button3 {
-    margin-top: 20px;
-    font-size: 14px;
-    border-radius: 15px;
-    width: 30%;
-    height: 30px;
     background-color: #6E6E6E;
+    border-radius: 15px;
     color: white;
+    font-size: 14px;
     font-weight: 700;
+    height: 30px;
+    margin-top: 20px;
     padding: 5px;
+    width: 30%;
 }
   
 .guesser-guess-form-button1:hover,
@@ -307,12 +307,12 @@ input:focus {outline:0;}
 }
 
 .score-card {
+  background-color: white;
   border: 1px solid #6E6E6E;
+  margin: 20px auto;
+  margin: auto;
   padding: 15px;
   width: 90%;
-  margin: auto;
-  background-color: white;
-  margin: 20px auto;
 }
 
 .range-number-error{
