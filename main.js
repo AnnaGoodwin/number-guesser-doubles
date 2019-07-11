@@ -14,7 +14,6 @@ var currentGuess2 = document.querySelector('.guesser-score-p4')
 var submitButton = document.querySelector('.guesser-guess-form-button1') 
 var clearButton = document.querySelector('.guesser-guess-form-button3')
 var resetButton = document.querySelector('.guesser-guess-form-button2')
-var scoreCard1 = document.querySelector('.score-card')
 var errorMessageNumber1 = document.querySelector('.guesser-number-error1')
 var errorMessageNumber2 = document.querySelector('.guesser-number-error2')
 var errorMessageName1 = document.querySelector ('.guesser-name-error1')
@@ -25,11 +24,9 @@ var scoreDisplay = document.querySelector ('.score')
 var tooHigh = "that's too high";
 var tooLow = "that's too low";
 var randomNum = 0;
-var playerCardGuess1 = 1;
-var playerCardGuess2 = 1;
+var guessCount = 0;
 
 document.addEventListener('DOMContentLoaded', getRandomNum);
-console.log(randomNum);
 clearButton.addEventListener('click', clearInput);
 updateButton.addEventListener('click', updateRange);
 submitButton.addEventListener('click', submitGuess);
@@ -48,6 +45,15 @@ chal2GuessInput.addEventListener('keydown', enableButton);
 minRangeInput.addEventListener('keydown', enableButton);
 maxRangeInput.addEventListener('keydown', enableButton);
 
+function deleteCard(e) {
+  e.preventDefault();
+  var scoreCard = document.querySelector('.score-card');
+
+  console.log(scoreCard)
+  // scoreDisplay.removeChild(scoreCard1)
+  scoreCard.style.display = "none";
+}
+
 function disableExponent(e) {
   if(e.keyCode === 69) {
     minRangeInput.value = '';
@@ -64,7 +70,6 @@ function updateRange(e) {
   rangeMinOverMaxError();
   rangeMaxUnderMinError();
   stopRangeInput();
-  console.log(randomNum)
   curMinRange.innerHTML = minRangeInput.value;
   curMaxRange.innerHTML = maxRangeInput.value;
   getRandomNum(parseInt(minRangeInput.value), parseInt(maxRangeInput.value));
@@ -76,8 +81,23 @@ function getRandomNum(min, max) {
 }
 
 function resetGame(e) {
-  e.preventDefault();
-  getRandomNum(parseInt(minRangeInput.value), parseInt(maxRangeInput.value));
+  e.preventDefault()
+  resetGameUI();
+ 
+  // scoreDisplay.removeChild(scoreCard1)
+  //attach to event listener on win card button
+
+}
+
+function resetGameUI() {
+  newMinValue = parseInt(curMinRange.innerHTML) - 10;
+  newMaxValue = parseInt(curMaxRange.innerHTML) + 10;
+
+  curMinRange.innerHTML = newMinValue
+  curMaxRange.innerHTML = newMaxValue
+
+  getRandomNum(newMinValue, newMaxValue);
+  console.log(randomNum)
   chal1GuessInput.value = '';
   chal2GuessInput.value = '';
 }
@@ -90,8 +110,9 @@ function submitGuess(e) {
   numericErrorMessage2();
   nameErrorMessage1();
   nameErrorMessage2();
+  guessCount += 2;
   cardWinner();
-  cardWinner2();
+
   challengerName1.innerHTML = chal1NameInput.value.toUpperCase();
   challengerName2.innerHTML = chal2NameInput.value.toUpperCase();
   currentGuess1.innerHTML = chal1GuessInput.value;
@@ -108,14 +129,8 @@ function enableButton() {
     clearButton.disabled = false;
 }
 
-function clearInput(e) {
-  e.preventDefault();
-  chal1NameInput.value = '';
-  chal2NameInput.value = '';
-  chal1GuessInput.value = '';
-  chal2GuessInput.value = '';
-  minRangeInput.value = '';
-  maxRangeInput.value = '';
+function clearInput() {
+  document.location.reload();
 }
 
 function guessingMessage1() {
@@ -208,35 +223,29 @@ function stopRangeInput () {
 }
 
 function cardWinner() {
-  if(document.querySelector('.guesser-score-p3').innerHTML === 'Boom') {
-  scoreDisplay.insertAdjacentHTML('afterbegin', 
-    `<article class="score-card">
-      <p class="score-card-p1"> ${chal1NameInput.value.toUpperCase()}<span class="score-card-span1"> vs </span>${chal2NameInput.value.toUpperCase()}</p>
-      <h4 class="score-card-header1">${chal1NameInput.value.toUpperCase()}</h4>
-      <h5 class="score-card-header2">WINNER</h5>
-      <p class="score-card-p2"><span class="score-card-span2">${playerCardGuess2++}</span> GUESSES</p>
-      <p class="score-card-p3"><span class="score-card-span3"></span></p>
-      <button class="score-card-close">x</button>
-    </article>`
-    );
+  var userGuess1 = parseInt(chal1GuessInput.value)
+  var userGuess2 = parseInt(chal2GuessInput.value)
+
+  if(userGuess1 === randomNum || userGuess2 === randomNum) {
+      scoreDisplay.insertAdjacentHTML('afterbegin', `<article class="score-card"><p class="score-card-p1"> ${chal1NameInput.value.toUpperCase()}<span class="score-card-span1"> vs </span>${chal2NameInput.value.toUpperCase()}</p>
+            <h4 class="score-card-header1">${chal2NameInput.value.toUpperCase()}</h4>
+            <h5 class="score-card-header2">WINNER</h5>
+            <p class="score-card-p2"><span class="score-card-span2">${guessCount}</span>GUESSES</p>
+            <p class="score-card-p3"><span class="score-card-span3"></span></p>
+            <button class="score-card-close">x</button></article>`)
+    var scoreCardDeleteButton = document.querySelector ('.score-card-close')
+    scoreCardDeleteButton.addEventListener('click', deleteCard);
+    
+    guessCount = 0;
+
+    resetGameUI()
   }
 }
 
 
-function cardWinner2() {
-  if(document.querySelector('.guesser-score-p5').innerHTML === 'Boom') {
-  scoreDisplay.insertAdjacentHTML('afterbegin', 
-    `<article class="score-card">
-      <p class="score-card-p1"> ${chal1NameInput.value.toUpperCase()}<span class="score-card-span1"> vs </span>${chal2NameInput.value.toUpperCase()}</p>
-      <h4 class="score-card-header1">${chal2NameInput.value.toUpperCase()}</h4>
-      <h5 class="score-card-header2">WINNER</h5>
-      <p class="score-card-p2"><span class="score-card-span2">${playerCardGuess1++}</span> GUESSES</p>
-      <p class="score-card-p3"><span class="score-card-span3"></span></p>
-      <button class="score-card-close">x</button>
-    </article>`
-    );
-  }
-}
+
+
+
 
 
 
