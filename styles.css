@@ -15,11 +15,11 @@ body {
 /* header */
 
 header {
-  align-items: center;
-  background-color: #404042;
+  height: 150px;
   display: flex;
   flex-direction: column;
-  height: 150px;
+  align-items: center;
+  background-color: #404042
 }
 
 .title {
@@ -29,10 +29,10 @@ header {
 
 .title-header {
   color: #E64489;
-  font-size: 60px;
   font-weight: 400;
-  margin-top: 3%;
+  font-size: 60px;
   margin: auto;
+  margin-top: 3%;
 }
 
 span {
@@ -40,25 +40,25 @@ span {
 }
 
 .title-line-holder {
-  align-items: center;
   display: flex;
   flex-direction: row;
-  font-size: 18px;
+  align-items: center;
   justify-content: space-between;
   width: 98%;
+  font-size: 18px;
 }
 
 .title-line {
-  background-color: #ffffff;
   height: 1px;
   width: 25%;
+  background-color: #ffffff;
 }
 
 .title-p {
-  color: white;
   font-size: medium;
   margin: 0;
   text-align: center;
+  color: white;
 }
 
 /* main */
@@ -135,11 +135,11 @@ input:focus {outline:0;}
 
 .guesser-score-p2,
 .guesser-score-p4 {
-  color: #DD1972;
   font-size: 60px;
-  font-weight: 800;
+  color: #DD1972;
   margin: 0;
   padding: 0;
+  font-weight: 800;
 }
 
 .guesser-score-p3,
@@ -153,9 +153,9 @@ input:focus {outline:0;}
 }
 
 .container1 {
-  align-items: flex-end;
-  display: flex;
   justify-content: space-between;
+  display: flex;
+  align-items: flex-end;
 }
 
 .container2 {
@@ -164,9 +164,9 @@ input:focus {outline:0;}
 
 .container2,
 .container3 {
-  align-content: flex-start;
   display: flex;
   justify-content: space-between;
+  align-content: flex-start;
 
 }
 
@@ -202,12 +202,6 @@ input:focus {outline:0;}
   color: #404042;
 }
 
-.score-card {
-    margin: 20px 40px;
-    background-color: white;
-    
-}
-
 .middle-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -232,13 +226,13 @@ input:focus {outline:0;}
 }
 
 .guesser-range-form-button {
-  background-color: #6E6E6E;
-  border-radius: 15px;
-  color: white;
-  font-size: 14px;
-  font-weight: 800;
-  height: 30px;
   width: 20%;
+  font-size: 14px;
+  border-radius: 15px;
+  height: 30px;
+  background-color: #6E6E6E;
+  color: white;
+  font-weight: 800;
 }
 
 .guesser-range-form-button:hover {
@@ -255,15 +249,15 @@ input:focus {outline:0;}
 .guesser-guess-form-button1,
 .guesser-guess-form-button2,
 .guesser-guess-form-button3 {
-    background-color: #6E6E6E;
-    border-radius: 15px;
-    color: white;
-    font-size: 14px;
-    font-weight: 700;
-    height: 30px;
     margin-top: 20px;
-    padding: 5px;
+    font-size: 14px;
+    border-radius: 15px;
     width: 30%;
+    height: 30px;
+    background-color: #6E6E6E;
+    color: white;
+    font-weight: 700;
+    padding: 5px;
 }
   
 .guesser-guess-form-button1:hover,
@@ -339,6 +333,10 @@ h5 {
 .score-card-span1 {
   margin: 0 15px;
   color: #6E6E6E;
+}
+
+.score-card-span3 {
+  padding-right: 55px;
 }
 
 .score-card-close {
