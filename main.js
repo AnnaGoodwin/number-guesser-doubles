@@ -29,7 +29,6 @@ var guessCount = 0;
 
 
 document.addEventListener('DOMContentLoaded', getRandomNum);
-console.log(randomNum);
 clearButton.addEventListener('click', clearInput);
 updateButton.addEventListener('click', updateRange);
 submitButton.addEventListener('click', submitGuess);
@@ -64,7 +63,6 @@ function updateRange(e) {
   rangeMinOverMaxError();
   rangeMaxUnderMinError();
   stopRangeInput();
-  console.log(randomNum)
   curMinRange.innerHTML = minRangeInput.value;
   curMaxRange.innerHTML = maxRangeInput.value;
   getRandomNum(parseInt(minRangeInput.value), parseInt(maxRangeInput.value));
@@ -76,17 +74,28 @@ function getRandomNum(min, max) {
 }
 
 function resetGame(e) {
-  e.preventDefault();
-  getRandomNum(parseInt(minRangeInput.value), parseInt(maxRangeInput.value));
-  chal1GuessInput.value = '';
-  chal2GuessInput.value = '';
-  // scoreDisplay.removeChild(scoreCard1);
-
+  e.preventDefault()
+  resetGameUI();
+ 
+  // scoreDisplay.removeChild(scoreCard1)
+  //attach to event listener on win card button
 
 }
 
+function resetGameUI() {
+  newMinValue = parseInt(curMinRange.innerHTML) - 10;
+  newMaxValue = parseInt(curMaxRange.innerHTML) + 10;
+
+  curMinRange.innerHTML = newMinValue
+  curMaxRange.innerHTML = newMaxValue
+
+  getRandomNum(newMinValue, newMaxValue);
+  console.log(randomNum)
+  chal1GuessInput.value = '';
+  chal2GuessInput.value = '';
+}
+
 function submitGuess(e) {
-  console.log('submit')
   e.preventDefault();
   guessingMessage1();
   guessingMessage2();
@@ -96,7 +105,6 @@ function submitGuess(e) {
   nameErrorMessage2();
   guessCount += 2;
   cardWinner();
-  cardWinner2();
   challengerName1.innerHTML = chal1NameInput.value;
   challengerName2.innerHTML = chal2NameInput.value;
   currentGuess1.innerHTML = chal1GuessInput.value;
@@ -114,9 +122,7 @@ function enableButton() {
 }
 
 function clearInput() {
-  
   document.location.reload();
- 
 }
 
 function guessingMessage1() {
@@ -213,16 +219,6 @@ function cardWinner() {
   var userGuess2 = parseInt(chal2GuessInput.value)
 
 if(userGuess1 === randomNum || userGuess2 === randomNum) {
-
-  // if(document.querySelector('.guesser-score-p3').innerHTML === 'Boom') {
-// 
-  // scoreDisplay.insertAdjacentHTML('afterbegin', `<p class="score-card-p1"> ${chal1NameInput.value.toUpperCase()}<span class="score-card-span1"> vs </span>${chal2NameInput.value.toUpperCase()}</p>
-  //         <h4 class="score-card-header1">${chal1NameInput.value.toUpperCase()}</h4>
-  //         <h5 class="score-card-header2">WINNER</h5>
-  //         <p class="score-card-p2"><span class="score-card-span2">${guessCount}</span>GUESSES</p>
-  //         <p class="score-card-p3"><span class="score-card-span3"></span></p>
-  //         <button class="score-card-close">x</button>`)
-  //   guessCount = 0;
     scoreDisplay.insertAdjacentHTML('afterbegin', `<article class="score-card"><p class="score-card-p1"> ${chal1NameInput.value.toUpperCase()}<span class="score-card-span1"> vs </span>${chal2NameInput.value.toUpperCase()}</p>
           <h4 class="score-card-header1">${chal2NameInput.value.toUpperCase()}</h4>
           <h5 class="score-card-header2">WINNER</h5>
@@ -230,27 +226,14 @@ if(userGuess1 === randomNum || userGuess2 === randomNum) {
           <p class="score-card-p3"><span class="score-card-span3"></span></p>
           <button class="score-card-close">x</button></article>`)
     guessCount = 0;
-    curMinRange -= 10;
-    curMaxRange += 10;
-    resetGame
+
+    resetGameUI()
+
   }
 }
 
 
-function cardWinner2() {
-  // if(document.querySelector('.guesser-score-p5').innerHTML === 'Boom') {
-  //     console.log('hi2')
 
-  // scoreCard1.insertAdjacentHTML('afterbegin', `<p class="score-card-p1"> ${chal1NameInput.value.toUpperCase()}<span class="score-card-span1"> vs </span>${chal2NameInput.value.toUpperCase()}</p>
-  //         <h4 class="score-card-header1">${chal2NameInput.value.toUpperCase()}</h4>
-  //         <h5 class="score-card-header2">WINNER</h5>
-  //         <p class="score-card-p2"><span class="score-card-span2">${guessCount}</span>GUESSES</p>
-  //         <p class="score-card-p3"><span class="score-card-span3"></span></p>
-  //         <button class="score-card-close">x</button>`)
-  //   guessCount = 0;
-
-  // }
-}
 
 
 
