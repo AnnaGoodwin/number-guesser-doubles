@@ -1,3 +1,6 @@
+
+// Query Selectors
+
 var minRangeInput = document.querySelector('.verify-input1')
 var maxRangeInput = document.querySelector('.verify-input2')
 var updateButton = document.querySelector('.guesser-range-form-button')
@@ -21,10 +24,15 @@ var errorMessageName2 = document.querySelector ('.guesser-name-error2')
 var rangeErrorMessage1 = document.querySelector ('.range-number-error')
 var rangeErrorMessage2 = document.querySelector ('.range-number-error2')
 var scoreDisplay = document.querySelector ('.score')
+
+// Global Variables
+
 var tooHigh = "that's too high";
 var tooLow = "that's too low";
 var randomNum = 0;
 var guessCount = 0;
+
+// Event Listeners
 
 document.addEventListener('DOMContentLoaded', getRandomNum);
 clearButton.addEventListener('click', clearInput);
@@ -45,12 +53,11 @@ chal2GuessInput.addEventListener('keydown', enableButton);
 minRangeInput.addEventListener('keydown', enableButton);
 maxRangeInput.addEventListener('keydown', enableButton);
 
+// Functions
+
 function deleteCard(e) {
   e.preventDefault();
   var scoreCard = document.querySelector('.score-card');
-
-  console.log(scoreCard)
-  // scoreDisplay.removeChild(scoreCard1)
   scoreCard.style.display = "none";
 }
 
@@ -83,10 +90,6 @@ function getRandomNum(min, max) {
 function resetGame(e) {
   e.preventDefault()
   resetGameUI();
- 
-  // scoreDisplay.removeChild(scoreCard1)
-  //attach to event listener on win card button
-
 }
 
 function resetGameUI() {
@@ -152,7 +155,6 @@ function guessingMessage2() {
     document.querySelector('.guesser-score-p5').innerHTML = 'Boom';
   }
 }
-
 
 function numericErrorMessage1() {
   if (chal1GuessInput.value > parseInt(curMaxRange.innerText) || chal1GuessInput.value < parseInt(curMinRange.innerText)) {
