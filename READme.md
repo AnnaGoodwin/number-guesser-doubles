@@ -1,4 +1,4 @@
-##Co-Authored by Anna Goodwin and Foster Taylor
+## Co-Authored by Anna Goodwin and Foster Taylor
 
 This project is a number guessing game that utilizes media queries for responsive design, as well as positioning using `flex-box`.
 
