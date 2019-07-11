@@ -104,6 +104,13 @@ h2 {
   color: #404042;
 }
 
+h3 {
+  font-size: 16px;
+  color: #6E6E6E;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
 label {
   color: #6E6E6E;
   font-size: 15px;
@@ -118,7 +125,27 @@ input:focus {outline:0;}
 .guesser {
   background-color: #F7F7F7;
   flex: 1
-  /*height:100vh;*/
+}
+
+.guesser-score-p1 {
+  font-size: 16px;
+  color: #6E6E6E;
+  margin: 0;
+}
+
+.guesser-score-p2,
+.guesser-score-p4 {
+  font-size: 60px;
+  color: #DD1972;
+  margin: 0;
+  padding: 0;
+  font-weight: 800;
+}
+
+.guesser-score-p3,
+.guesser-score-p5 {
+  margin: 0;
+  color: #6E6E6E;
 }
 
 .set-range {
@@ -194,15 +221,17 @@ input:focus {outline:0;}
   padding: 15px;
 }
 
-.verify-input1,
-.verify-input2,
-.guesser-score,
-.guesser-range-form-button {
+.guesser-score-container {
   display: flex;
+  justify-content: space-evenly;
+}
+
+.guesser-score-article1,
+.guesser-score-article2 {
+  text-align: center;
 }
 
 .guesser-range-form-button {
-  padding: 0 6%;
   font-size: 14px;
   border-radius: 15px;
   height: 30px;
@@ -241,6 +270,12 @@ input:focus {outline:0;}
 .guesser-guess-form-button3:hover {
     background-color: #DD1972;
 }
+
+
+/*.guesser-score-container {
+  display: flex;
+  justify-content: space-around;
+}*/
 
 .guesser-number-error1 {
   display: none;
