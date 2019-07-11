@@ -209,24 +209,30 @@ function stopRangeInput () {
 
 function cardWinner() {
   if(document.querySelector('.guesser-score-p3').innerHTML === 'Boom') {
-  scoreDisplay.insertAdjacentHTML('afterbegin', `<p class="score-card-p1"> ${chal1NameInput.value.toUpperCase()}<span class="score-card-span1"> vs </span>${chal2NameInput.value.toUpperCase()}</p>
-          <h4 class="score-card-header1">${chal1NameInput.value.toUpperCase()}</h4>
-          <h5 class="score-card-header2">WINNER</h5>
-          <p class="score-card-p2"><span class="score-card-span2">${playerCardGuess2++}</span>GUESSES</p>
-          <p class="score-card-p3"><span class="score-card-span3"></span></p>
-          <button class="score-card-close">x</button>`)
+  scoreDisplay.insertAdjacentHTML('afterbegin', 
+    `<article class="score-card">
+      <p class="score-card-p1"> ${chal1NameInput.value.toUpperCase()}<span class="score-card-span1"> vs </span>${chal2NameInput.value.toUpperCase()}</p>
+      <h4 class="score-card-header1">${chal1NameInput.value.toUpperCase()}</h4>
+      <h5 class="score-card-header2">WINNER</h5>
+      <p class="score-card-p2"><span class="score-card-span2">${playerCardGuess2++}</span>GUESSES</p>
+      <p class="score-card-p3"><span class="score-card-span3"></span></p>
+      <button class="score-card-close">x</button>
+    </article>`)
   }
 }
 
 
 function cardWinner2() {
   if(document.querySelector('.guesser-score-p5').innerHTML === 'Boom') {
-  scoreDisplay.insertAdjacentHTML('afterbegin', `<p class="score-card-p1"> ${chal1NameInput.value.toUpperCase()}<span class="score-card-span1"> vs </span>${chal2NameInput.value.toUpperCase()}</p>
-          <h4 class="score-card-header1">${chal2NameInput.value.toUpperCase()}</h4>
-          <h5 class="score-card-header2">WINNER</h5>
-          <p class="score-card-p2"><span class="score-card-span2">${playerCardGuess1++}</span>GUESSES</p>
-          <p class="score-card-p3"><span class="score-card-span3"></span></p>
-          <button class="score-card-close">x</button>`)
+  scoreDisplay.insertAdjacentHTML('afterbegin', 
+    `<article class="score-card">
+      <p class="score-card-p1"> ${chal1NameInput.value.toUpperCase()}<span class="score-card-span1"> vs </span>${chal2NameInput.value.toUpperCase()}</p>
+      <h4 class="score-card-header1">${chal2NameInput.value.toUpperCase()}</h4>
+      <h5 class="score-card-header2">WINNER</h5>
+      <p class="score-card-p2"><span class="score-card-span2">${playerCardGuess1++}</span>GUESSES</p>
+      <p class="score-card-p3"><span class="score-card-span3"></span></p>
+      <button class="score-card-close">x</button>
+    </article>`)
   }
 }
 
