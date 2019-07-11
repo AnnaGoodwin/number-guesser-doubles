@@ -187,7 +187,7 @@ function rangeError2() {
 function rangeMaxUnderMinError() {
   if (maxRangeInput.value < minRangeInput.value) {
     rangeErrorMessage2.style.display = 'block'
-  } else if (minRangeInput.value < maxRangeInput.value){
+  } else if (minRangeInput.value < maxRangeInput.value) {
     rangeErrorMessage2.style.display = 'none'
   }
 }
@@ -195,7 +195,7 @@ function rangeMaxUnderMinError() {
 function rangeMinOverMaxError() {
   if (maxRangeInput.value < minRangeInput.value) {
     rangeErrorMessage1.style.display = 'block'
-  } else if (maxRangeInput.value > minRangeInput.value){
+  } else if (maxRangeInput.value > minRangeInput.value) {
     rangeErrorMessage1.style.display = 'none'
   }
 }
@@ -217,7 +217,8 @@ function cardWinner() {
       <p class="score-card-p2"><span class="score-card-span2">${playerCardGuess2++}</span>GUESSES</p>
       <p class="score-card-p3"><span class="score-card-span3"></span></p>
       <button class="score-card-close">x</button>
-    </article>`)
+    </article>`
+    );
   }
 }
 
@@ -232,7 +233,8 @@ function cardWinner2() {
       <p class="score-card-p2"><span class="score-card-span2">${playerCardGuess1++}</span>GUESSES</p>
       <p class="score-card-p3"><span class="score-card-span3"></span></p>
       <button class="score-card-close">x</button>
-    </article>`)
+    </article>`
+    );
   }
 }
 
