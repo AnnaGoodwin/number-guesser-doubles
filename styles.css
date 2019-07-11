@@ -11,7 +11,6 @@ body {
   margin: auto 0;
 }
 
-
 /* header */
 
 header {
@@ -124,6 +123,7 @@ input:focus {outline:0;}
 
 .guesser {
   background-color: #F7F7F7;
+  border-right: 1px solid #6e6e6e;
   flex: 1
 }
 
@@ -285,6 +285,12 @@ input:focus {outline:0;}
   width:15px;
 }
 
+.separator{
+  background-color: #d0d2d3;
+  height: 235px;
+  margin-bottom: 20px;
+  width: 2px;
+}
 
 /* score */
 
@@ -370,10 +376,19 @@ h5 {
   main {
     display: block;
   }
+
   .score,
   .guesser {
     padding-bottom: 5px;
     padding-top: 5px;
     width: 100%;
+  }
+}
+
+@media(max-width: 550px) {
+  .container1,
+  .container2,
+  .container3 {
+    display: block;
   }
 }
