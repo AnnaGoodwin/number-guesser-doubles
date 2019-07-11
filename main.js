@@ -25,8 +25,8 @@ var scoreDisplay = document.querySelector ('.score')
 var tooHigh = "that's too high";
 var tooLow = "that's too low";
 var randomNum = 0;
-var playerCardGuess1 = 0;
-var playerCardGuess2 = 0;
+var playerCardGuess1 = 1;
+var playerCardGuess2 = 1;
 
 document.addEventListener('DOMContentLoaded', getRandomNum);
 console.log(randomNum);
@@ -92,8 +92,8 @@ function submitGuess(e) {
   nameErrorMessage2();
   cardWinner();
   cardWinner2();
-  challengerName1.innerHTML = chal1NameInput.value;
-  challengerName2.innerHTML = chal2NameInput.value;
+  challengerName1.innerHTML = chal1NameInput.value.toUpperCase();
+  challengerName2.innerHTML = chal2NameInput.value.toUpperCase();
   currentGuess1.innerHTML = chal1GuessInput.value;
   currentGuess2.innerHTML = chal2GuessInput.value;
 }
@@ -187,7 +187,7 @@ function rangeError2() {
 function rangeMaxUnderMinError() {
   if (maxRangeInput.value < minRangeInput.value) {
     rangeErrorMessage2.style.display = 'block'
-  } else if (minRangeInput.value < maxRangeInput.value){
+  } else if (minRangeInput.value < maxRangeInput.value) {
     rangeErrorMessage2.style.display = 'none'
   }
 }
@@ -195,7 +195,7 @@ function rangeMaxUnderMinError() {
 function rangeMinOverMaxError() {
   if (maxRangeInput.value < minRangeInput.value) {
     rangeErrorMessage1.style.display = 'block'
-  } else if (maxRangeInput.value > minRangeInput.value){
+  } else if (maxRangeInput.value > minRangeInput.value) {
     rangeErrorMessage1.style.display = 'none'
   }
 }
@@ -209,24 +209,32 @@ function stopRangeInput () {
 
 function cardWinner() {
   if(document.querySelector('.guesser-score-p3').innerHTML === 'Boom') {
-  scoreDisplay.insertAdjacentHTML('afterbegin', `<p class="score-card-p1"> ${chal1NameInput.value.toUpperCase()}<span class="score-card-span1"> vs </span>${chal2NameInput.value.toUpperCase()}</p>
-          <h4 class="score-card-header1">${chal1NameInput.value.toUpperCase()}</h4>
-          <h5 class="score-card-header2">WINNER</h5>
-          <p class="score-card-p2"><span class="score-card-span2">${playerCardGuess2++}</span>GUESSES</p>
-          <p class="score-card-p3"><span class="score-card-span3"></span></p>
-          <button class="score-card-close">x</button>`)
+  scoreDisplay.insertAdjacentHTML('afterbegin', 
+    `<article class="score-card">
+      <p class="score-card-p1"> ${chal1NameInput.value.toUpperCase()}<span class="score-card-span1"> vs </span>${chal2NameInput.value.toUpperCase()}</p>
+      <h4 class="score-card-header1">${chal1NameInput.value.toUpperCase()}</h4>
+      <h5 class="score-card-header2">WINNER</h5>
+      <p class="score-card-p2"><span class="score-card-span2">${playerCardGuess2++}</span> GUESSES</p>
+      <p class="score-card-p3"><span class="score-card-span3"></span></p>
+      <button class="score-card-close">x</button>
+    </article>`
+    );
   }
 }
 
 
 function cardWinner2() {
   if(document.querySelector('.guesser-score-p5').innerHTML === 'Boom') {
-  scoreDisplay.insertAdjacentHTML('afterbegin', `<p class="score-card-p1"> ${chal1NameInput.value.toUpperCase()}<span class="score-card-span1"> vs </span>${chal2NameInput.value.toUpperCase()}</p>
-          <h4 class="score-card-header1">${chal2NameInput.value.toUpperCase()}</h4>
-          <h5 class="score-card-header2">WINNER</h5>
-          <p class="score-card-p2"><span class="score-card-span2">${playerCardGuess1++}</span>GUESSES</p>
-          <p class="score-card-p3"><span class="score-card-span3"></span></p>
-          <button class="score-card-close">x</button>`)
+  scoreDisplay.insertAdjacentHTML('afterbegin', 
+    `<article class="score-card">
+      <p class="score-card-p1"> ${chal1NameInput.value.toUpperCase()}<span class="score-card-span1"> vs </span>${chal2NameInput.value.toUpperCase()}</p>
+      <h4 class="score-card-header1">${chal2NameInput.value.toUpperCase()}</h4>
+      <h5 class="score-card-header2">WINNER</h5>
+      <p class="score-card-p2"><span class="score-card-span2">${playerCardGuess1++}</span> GUESSES</p>
+      <p class="score-card-p3"><span class="score-card-span3"></span></p>
+      <button class="score-card-close">x</button>
+    </article>`
+    );
   }
 }
 
