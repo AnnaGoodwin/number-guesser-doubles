@@ -80,6 +80,9 @@ function resetGame(e) {
   getRandomNum(parseInt(minRangeInput.value), parseInt(maxRangeInput.value));
   chal1GuessInput.value = '';
   chal2GuessInput.value = '';
+  document.querySelector('.score-card-span2').innerHTML = 0;
+
+
 }
 
 function submitGuess(e) {
@@ -195,7 +198,7 @@ function rangeMaxUnderMinError() {
 function rangeMinOverMaxError() {
   if (maxRangeInput.value < minRangeInput.value) {
     rangeErrorMessage1.style.display = 'block'
-  } else if (maxRangeInput.value > minRangeInput.value){
+  } else if(maxRangeInput.value > minRangeInput.value){
     rangeErrorMessage1.style.display = 'none'
   }
 }
@@ -220,15 +223,18 @@ function cardWinner() {
 
 
 function cardWinner2() {
+  playerCardGuess1 = playerCardGuess1 + 2
   if(document.querySelector('.guesser-score-p5').innerHTML === 'Boom') {
   scoreDisplay.insertAdjacentHTML('afterbegin', `<p class="score-card-p1"> ${chal1NameInput.value.toUpperCase()}<span class="score-card-span1"> vs </span>${chal2NameInput.value.toUpperCase()}</p>
           <h4 class="score-card-header1">${chal2NameInput.value.toUpperCase()}</h4>
           <h5 class="score-card-header2">WINNER</h5>
-          <p class="score-card-p2"><span class="score-card-span2">${playerCardGuess1++}</span>GUESSES</p>
+          <p class="score-card-p2"><span class="score-card-span2">${playerCardGuess1}</span>GUESSES</p>
           <p class="score-card-p3"><span class="score-card-span3"></span></p>
           <button class="score-card-close">x</button>`)
   }
 }
+
+
 
 
 
