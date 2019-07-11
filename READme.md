@@ -4,8 +4,7 @@ This project is a number guessing game that utilizes media queries for responsiv
 
 ## Description
 Using HTML, CSS, and JavaScript, the application window responds to resizing down to 320px for mobile viewports. 
-Semantic tags were strategically placed in our HTML, which included the implementation of the `<output>` and `<template>` 
-elements. Most JavaScript functions are under 10 lines long.
+Semantic tags were strategically placed in our HTML. Most JavaScript functions are under 10 lines long.
 
 ## Features:
 - Ability to change minimum and maximum range. and update range -10 +10
