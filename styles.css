@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
+  transition: ease all .3s;
 }
 
 
