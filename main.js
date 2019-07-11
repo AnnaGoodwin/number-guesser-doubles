@@ -42,6 +42,7 @@ chal1NameInput.addEventListener('keydown', enableButton);
 chal2NameInput.addEventListener('keydown', enableButton);
 chal1GuessInput.addEventListener('keydown', enableButton);
 chal2GuessInput.addEventListener('keydown', enableButton);
+
 function disableExponent(e) {
   if(e.keyCode === 69) {
     minRangeInput.value = '';
@@ -52,12 +53,13 @@ function disableExponent(e) {
 }
 
 function updateRange(e) {
-  console.log('line 52 works here')
   e.preventDefault();
   rangeError();
   rangeError2();
   rangeMinOverMaxError();
   rangeMaxUnderMinError();
+  stopRangeInput();
+  console.log(randomNum)
   curMinRange.innerHTML = minRangeInput.value;
   curMaxRange.innerHTML = maxRangeInput.value;
   getRandomNum(parseInt(minRangeInput.value), parseInt(maxRangeInput.value));
@@ -77,6 +79,7 @@ function submitGuess(e) {
   nameErrorMessage1();
   nameErrorMessage2();
   cardWinner();
+  cardWinner2();
   challengerName1.innerHTML = chal1NameInput.value;
   challengerName2.innerHTML = chal2NameInput.value;
   currentGuess1.innerHTML = chal1GuessInput.value;
@@ -125,24 +128,32 @@ function guessingMessage2() {
 function numericErrorMessage1() {
   if (chal1GuessInput.value > parseInt(curMaxRange.innerText) || chal1GuessInput.value < parseInt(curMinRange.innerText)) {
     errorMessageNumber1.style.display = 'block'
+  } else {
+    errorMessageNumber1.style.display = 'none'
   }
 }
 
 function numericErrorMessage2() {
   if (chal2GuessInput.value > parseInt(curMaxRange.innerText) || chal2GuessInput.value < parseInt(curMinRange.innerText)) {
     errorMessageNumber2.style.display = 'block'
+  } else {
+    errorMessageNumber2.style.display = 'none'
   }
 }
 
 function nameErrorMessage1() {
   if (chal1NameInput.value == '' ) {
     errorMessageName1.style.display = 'block'
+  } else {
+    errorMessageName1.style.display = 'none'
   }
 }
 
 function nameErrorMessage2() {
   if (chal2NameInput.value == '' ) {
     errorMessageName2.style.display = 'block'
+  } else {
+    errorMessageName2.style.display = 'none'
   }
 }
 
@@ -159,33 +170,55 @@ function rangeError2() {
   }
 }
 
-function rangeMaxUnderMinError(){
+function rangeMaxUnderMinError() {
   if (maxRangeInput.value < minRangeInput.value) {
     rangeErrorMessage2.style.display = 'block'
+  } else if (minRangeInput.value < maxRangeInput.value){
+    rangeErrorMessage2.style.display = 'none'
   }
 }
 
-function rangeMinOverMaxError(){
+function rangeMinOverMaxError() {
   if (maxRangeInput.value < minRangeInput.value) {
     rangeErrorMessage1.style.display = 'block'
+  } else if (maxRangeInput.value > minRangeInput.value){
+    rangeErrorMessage1.style.display = 'none'
   }
 }
 
+function stopRangeInput () {
+  if(maxRangeInput.value < minRangeInput.value) {
+    minRangeInput.value = '';
+    maxRangeInput.value = '';
+  }
+}
 
 function cardWinner(){
-  scoreDisplay.insertAdjacentHTML('afterbegin', `<p class="score-card-p1">Challenger 1 <span class="score-card-span1"> vs </span>Challenger 2</p>
-          <h4 class="score-card-header1">CHALLENGER 2 NAME</h4>
+  if(document.querySelector('.guesser-score-p3').innerHTML === 'Boom'){
+  scoreDisplay.insertAdjacentHTML('afterbegin', `<p class="score-card-p1"> ${chal1NameInput.value.toUpperCase()}<span class="score-card-span1"> vs </span>${chal2NameInput.value.toUpperCase()}</p>
+          <h4 class="score-card-header1">${chal1NameInput.value.toUpperCase()}</h4>
           <h5 class="score-card-header2">WINNER</h5>
           <p class="score-card-p2"><span class="score-card-span2">47</span>GUESSES</p>
           <p class="score-card-p3"><span class="score-card-span3">1.35</span></p>
-          <button class="score-card-close">x</button>`
-)
+          <button class="score-card-close">x</button>`)
+        }
 }
 
 
+function cardWinner2(){
+  if(document.querySelector('.guesser-score-p5').innerHTML === 'Boom'){
+  scoreDisplay.insertAdjacentHTML('afterbegin', `<p class="score-card-p1"> ${chal1NameInput.value.toUpperCase()}<span class="score-card-span1"> vs </span>${chal2NameInput.value.toUpperCase()}</p>
+          <h4 class="score-card-header1">${chal2NameInput.value.toUpperCase()}</h4>
+          <h5 class="score-card-header2">WINNER</h5>
+          <p class="score-card-p2"><span class="score-card-span2">47</span>GUESSES</p>
+          <p class="score-card-p3"><span class="score-card-span3">1.35</span></p>
+          <button class="score-card-close">x</button>`)
+        }
+}
 
+// function increaseRandom () {
+//   if(document.querySelector('.guesser-score-p5').innerHTML === 'Boom')
 
-
-
+// }
 
 
