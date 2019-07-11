@@ -384,11 +384,3 @@ h5 {
     width: 100%;
   }
 }
-
-@media(max-width: 550px) {
-  .container1,
-  .container2,
-  .container3 {
-    display: block;
-  }
-}
