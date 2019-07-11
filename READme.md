@@ -1,6 +1,6 @@
 ## Co-Authored by Anna Goodwin and Foster Taylor
 
-This project is a number guessing game that utilizes media queries for responsive design, as well as positioning using `flex-box`.
+This project is a number guessing game that utilizes media queries for responsive design, as well as positioning using flex.
 
 ## Description
 Using HTML, CSS, and JavaScript, the application window responds to resizing down to 320px for mobile viewports. 
