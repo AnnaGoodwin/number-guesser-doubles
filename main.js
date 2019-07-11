@@ -92,8 +92,8 @@ function submitGuess(e) {
   nameErrorMessage2();
   cardWinner();
   cardWinner2();
-  challengerName1.innerHTML = chal1NameInput.value;
-  challengerName2.innerHTML = chal2NameInput.value;
+  challengerName1.innerHTML = chal1NameInput.value.toUpperCase();
+  challengerName2.innerHTML = chal2NameInput.value.toUpperCase();
   currentGuess1.innerHTML = chal1GuessInput.value;
   currentGuess2.innerHTML = chal2GuessInput.value;
 }
