@@ -20,3 +20,8 @@ elements. Most JavaScript functions are under 10 lines long.
 ### How to Play
 
 To win the game, a player must guess a randomly generated number.  The range of this number can be changed manually. Players fill in their names and guesses. Upon submitting guesses, the game will display whether guesses are too high, too low, or will display a winner card with the winners name if the correct number is guessed.  The input fields can be all be cleared when text is entered, and/or the game can be reset, which will generate a new random number.
+
+
+#### Original comp:
+
+![Original comp](http://frontend.turing.io/assets/images/projects/number-guesser/week2-numberguesser-01.jpg)
