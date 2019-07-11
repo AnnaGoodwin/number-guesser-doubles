@@ -232,6 +232,7 @@ input:focus {outline:0;}
 }
 
 .guesser-range-form-button {
+  width: 20%;
   font-size: 14px;
   border-radius: 15px;
   height: 30px;
@@ -303,6 +304,15 @@ input:focus {outline:0;}
 .score {
   flex: 1;
   background-color:#D1D2D4;
+}
+
+.score-card {
+  border: 1px solid #6E6E6E;
+  padding: 15px;
+  width: 90%;
+  margin: auto;
+  background-color: white;
+  margin: 20px auto;
 }
 
 .range-number-error{
