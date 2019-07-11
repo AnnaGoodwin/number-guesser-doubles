@@ -295,18 +295,66 @@ input:focus {outline:0;}
 
 /* score */
 
+h4,
+h5 {
+  text-align: center;
+  color: #6E6E6E;
+  font-size: 27px;
+  margin: 15px;
+}
+
+h5 {
+  margin-top: 0;
+  font-weight: lighter;
+}
+
 .score {
   flex: 1;
   background-color:#D1D2D4;
 }
 
 .score-card {
-  border: 1px solid #6E6E6E;
-  padding: 15px;
-  width: 90%;
-  margin: auto;
   background-color: white;
+  border: 1px solid #6E6E6E;
   margin: 20px auto;
+  padding: 0 15px;
+  width: 90%;
+}
+
+.score-card-p1 {
+  color: #6E6E6E;
+  text-align: center;
+  border-bottom: 2px solid #D0D2D3;
+  font-size: 14px;
+  font-weight: bold;
+  padding-bottom: 9px;
+}
+
+.score-card-span1 {
+  margin: 0 15px;
+  color: #6E6E6E;
+}
+
+.score-card-close {
+  align-self: center;
+  border-radius: 50%;
+  color: white;
+}
+.score-card-header1 {
+  margin-bottom: 0;
+}
+
+.score-card-header2 {
+  margin-top: 0;
+}
+
+
+.score-card-bottom {
+  color: #6E6E6E;
+  border-top: 2px solid #D0D2D3;
+  justify-content: space-between;
+  display: flex;
+  align-items: flex-end;
 }
 
 .range-number-error{
