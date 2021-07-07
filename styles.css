@@ -93,10 +93,6 @@ section {
   margin: 20px;
 }
 
-form {
-
-}
-
 h2 {
   color: #404042;
   font-size: 18px;
@@ -344,6 +340,7 @@ h5 {
   align-self: center;
   border-radius: 50%;
   color: white;
+  font-weight: 700;
 }
 .score-card-header1 {
   margin-bottom: 0;

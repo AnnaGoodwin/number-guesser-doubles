@@ -27,8 +27,6 @@ var scoreDisplay = document.querySelector ('.score')
 
 // Global Variables
 
-var tooHigh = "that's too high";
-var tooLow = "that's too low";
 var randomNum = 0;
 var guessCount = 0;
 
@@ -54,12 +52,6 @@ minRangeInput.addEventListener('keydown', enableButton);
 maxRangeInput.addEventListener('keydown', enableButton);
 
 // Functions
-
-function deleteCard(e) {
-  e.preventDefault();
-  var scoreCard = document.querySelector('.score-card');
-  scoreCard.style.display = "none";
-}
 
 function disableExponent(e) {
   if(e.keyCode === 69) {
@@ -138,9 +130,9 @@ function clearInput() {
 
 function guessingMessage1() {
   if (chal1GuessInput.value > randomNum) {
-    document.querySelector('.guesser-score-p3').innerHTML = tooHigh;
+    document.querySelector('.guesser-score-p3').innerHTML = "that's too high";
   } else if (chal1GuessInput.value < randomNum){
-    document.querySelector('.guesser-score-p3').innerHTML = tooLow;
+    document.querySelector('.guesser-score-p3').innerHTML = "that's too low";
   } else {
     document.querySelector('.guesser-score-p3').innerHTML = 'Boom';
   }
@@ -148,9 +140,9 @@ function guessingMessage1() {
 
 function guessingMessage2() {
   if (chal2GuessInput.value > randomNum) {
-    document.querySelector('.guesser-score-p5').innerHTML = tooHigh;
+    document.querySelector('.guesser-score-p5').innerHTML = "that's too high";
   } else if (chal2GuessInput.value < randomNum){
-    document.querySelector('.guesser-score-p5').innerHTML = tooLow;
+    document.querySelector('.guesser-score-p5').innerHTML = "that's too low";
   } else {
     document.querySelector('.guesser-score-p5').innerHTML = 'Boom';
   }
@@ -239,11 +231,21 @@ function cardWinner() {
               <button class="score-card-close">x</button>
             </div>
           </article>`);
-    var scoreCardDeleteButton = document.querySelector ('.score-card-close');
-    scoreCardDeleteButton.addEventListener('click', deleteCard);
     
     guessCount = 0;
 
     resetGameUI()
   }
 }
+
+// Event Delegation
+
+scoreDisplay.addEventListener('click', function(e) {
+  if (e.target.classList.contains('score-card-close')) {
+    deleteCard(e);
+  };
+});
+
+function deleteCard(e) {
+  e.target.closest('.score-card').remove();
+};
